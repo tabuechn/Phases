@@ -29,18 +29,27 @@ class PhasesGenerator extends AbstractGenerator {
 				for(nuberTyps: phase.phaseType.numbersType.numbersType){
 					System.out.println(nuberTyps);
 				}
+				fsa.generateFile('Phase'+phase.phaseNumber+'.java', 
+				"PhasenTyp: " + phase.phaseType.numbersType.name
+				+"\nPhasenIhalt: "+phase.phaseType.numbersType.numbersType
+				)
 			}
 			if(phase.phaseType.colorType!=null){
 				System.out.println(phase.phaseType.colorType.name);
 				System.out.println(phase.phaseType.colorType.numberColors);
+				fsa.generateFile('Phase'+phase.phaseNumber+'.java', 
+				"PhasenTyp: " + phase.phaseType.colorType.name
+				+"\nPhasenIhalt: "+phase.phaseType.colorType.numberColors
+				)
 			}
 			if(phase.phaseType.streetType!=null){
 				System.out.println(phase.phaseType.streetType.name);
 				System.out.println(phase.phaseType.streetType.streetLenght);
+				fsa.generateFile('Phase'+phase.phaseNumber+'.java', 
+				"PhasenTyp: " + phase.phaseType.streetType.name
+				+"\nPhasenIhalt: "+phase.phaseType.streetType.streetLenght
+				)
 			}
 		}
-		
-		
-		fsa.generateFile('Phase1.java', "Test1")
 	}
 }

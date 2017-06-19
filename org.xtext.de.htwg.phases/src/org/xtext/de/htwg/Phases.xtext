@@ -7,14 +7,17 @@ Game:
 ;
 
 Phase:
-	'PHASE' PhaseType;
+	'PHASE' 
+	phaseNumber=INT
+	phaseType=PhaseType
+	;
 
 
 PhaseType:
 	(streetType=STREET_TYPE | numbersType=NUMBERS_TYPE | colorType=COLORS_TYPE);
 
 NUMBERS_TYPE:
-	name = 'NUMBERS' ":" numbersType += NUMBERS
+	name = 'NUMBERS' ":" (numbersType += NUMBERS)*
 ;
 
 NUMBERS:

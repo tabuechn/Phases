@@ -11,6 +11,7 @@ import org.xtext.de.htwg.PhasesStandaloneSetupGenerated;
 @SuppressWarnings("all")
 public class PhasesStandaloneSetup extends PhasesStandaloneSetupGenerated {
   public static void doSetup() {
-    new PhasesStandaloneSetup().createInjectorAndDoEMFRegistration();
+    PhasesStandaloneSetup _phasesStandaloneSetup = new PhasesStandaloneSetup();
+    _phasesStandaloneSetup.createInjectorAndDoEMFRegistration();
   }
 }

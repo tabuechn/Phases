@@ -2,21 +2,14 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="phases" nsURI="http://www.xtext.org/de/htwg/Phases" nsPrefix="phases">
   <eClassifiers xsi:type="ecore:EClass" name="Game">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="phase1" eType="#//Phase"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="phase2" eType="#//Phase"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="phase3" eType="#//Phase"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="phase4" eType="#//Phase"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="phase5" eType="#//Phase"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="phases" upperBound="-1"
+        eType="#//Phase" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Phase">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="phaseNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="phaseType" eType="#//PhaseType"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="phaseDescription" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PhaseType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="streetType" eType="#//STREET_TYPE"

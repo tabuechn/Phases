@@ -3,11 +3,9 @@
  */
 package org.xtext.de.htwg.ide;
 
-import org.xtext.de.htwg.ide.AbstractPhasesIdeModule;
-
 /**
  * Use this class to register ide components.
  */
 @SuppressWarnings("all")
-public class PhasesIdeModule extends AbstractPhasesIdeModule {
+public class PhasesIdeModule /* implements AbstractPhasesIdeModule  */{
 }

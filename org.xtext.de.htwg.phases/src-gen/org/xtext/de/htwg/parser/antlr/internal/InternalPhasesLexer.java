@@ -12,9 +12,9 @@ import java.util.ArrayList;
 
 @SuppressWarnings("all")
 public class InternalPhasesLexer extends Lexer {
-    public static final int RULE_ID=5;
+    public static final int RULE_ID=6;
     public static final int RULE_WS=9;
-    public static final int RULE_STRING=6;
+    public static final int RULE_STRING=5;
     public static final int RULE_ANY_OTHER=10;
     public static final int RULE_SL_COMMENT=8;
     public static final int T__15=15;
@@ -214,10 +214,10 @@ public class InternalPhasesLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPhases.g:517:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // InternalPhases.g:517:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalPhases.g:457:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalPhases.g:457:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // InternalPhases.g:517:11: ( '^' )?
+            // InternalPhases.g:457:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -226,7 +226,7 @@ public class InternalPhasesLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // InternalPhases.g:517:11: '^'
+                    // InternalPhases.g:457:11: '^'
                     {
                     match('^'); 
 
@@ -244,7 +244,7 @@ public class InternalPhasesLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalPhases.g:517:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalPhases.g:457:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -293,10 +293,10 @@ public class InternalPhasesLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPhases.g:519:10: ( ( '0' .. '9' )+ )
-            // InternalPhases.g:519:12: ( '0' .. '9' )+
+            // InternalPhases.g:459:10: ( ( '0' .. '9' )+ )
+            // InternalPhases.g:459:12: ( '0' .. '9' )+
             {
-            // InternalPhases.g:519:12: ( '0' .. '9' )+
+            // InternalPhases.g:459:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -310,7 +310,7 @@ public class InternalPhasesLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // InternalPhases.g:519:13: '0' .. '9'
+            	    // InternalPhases.g:459:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -342,10 +342,10 @@ public class InternalPhasesLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPhases.g:521:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // InternalPhases.g:521:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalPhases.g:461:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // InternalPhases.g:461:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // InternalPhases.g:521:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalPhases.g:461:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -363,10 +363,10 @@ public class InternalPhasesLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // InternalPhases.g:521:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // InternalPhases.g:461:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // InternalPhases.g:521:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalPhases.g:461:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -382,7 +382,7 @@ public class InternalPhasesLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // InternalPhases.g:521:21: '\\\\' .
+                    	    // InternalPhases.g:461:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -390,7 +390,7 @@ public class InternalPhasesLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalPhases.g:521:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalPhases.g:461:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -415,10 +415,10 @@ public class InternalPhasesLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalPhases.g:521:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // InternalPhases.g:461:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // InternalPhases.g:521:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalPhases.g:461:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -434,7 +434,7 @@ public class InternalPhasesLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // InternalPhases.g:521:54: '\\\\' .
+                    	    // InternalPhases.g:461:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -442,7 +442,7 @@ public class InternalPhasesLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalPhases.g:521:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalPhases.g:461:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -485,12 +485,12 @@ public class InternalPhasesLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPhases.g:523:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalPhases.g:523:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalPhases.g:463:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalPhases.g:463:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalPhases.g:523:24: ( options {greedy=false; } : . )*
+            // InternalPhases.g:463:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -515,7 +515,7 @@ public class InternalPhasesLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // InternalPhases.g:523:52: .
+            	    // InternalPhases.g:463:52: .
             	    {
             	    matchAny(); 
 
@@ -545,12 +545,12 @@ public class InternalPhasesLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPhases.g:525:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalPhases.g:525:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalPhases.g:465:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalPhases.g:465:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalPhases.g:525:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalPhases.g:465:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -563,7 +563,7 @@ public class InternalPhasesLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // InternalPhases.g:525:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalPhases.g:465:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -583,7 +583,7 @@ public class InternalPhasesLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalPhases.g:525:40: ( ( '\\r' )? '\\n' )?
+            // InternalPhases.g:465:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -592,9 +592,9 @@ public class InternalPhasesLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // InternalPhases.g:525:41: ( '\\r' )? '\\n'
+                    // InternalPhases.g:465:41: ( '\\r' )? '\\n'
                     {
-                    // InternalPhases.g:525:41: ( '\\r' )?
+                    // InternalPhases.g:465:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -603,7 +603,7 @@ public class InternalPhasesLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // InternalPhases.g:525:41: '\\r'
+                            // InternalPhases.g:465:41: '\\r'
                             {
                             match('\r'); 
 
@@ -635,10 +635,10 @@ public class InternalPhasesLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPhases.g:527:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalPhases.g:527:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalPhases.g:467:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalPhases.g:467:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalPhases.g:527:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalPhases.g:467:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -692,8 +692,8 @@ public class InternalPhasesLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPhases.g:529:16: ( . )
-            // InternalPhases.g:529:18: .
+            // InternalPhases.g:469:16: ( . )
+            // InternalPhases.g:469:18: .
             {
             matchAny(); 
 

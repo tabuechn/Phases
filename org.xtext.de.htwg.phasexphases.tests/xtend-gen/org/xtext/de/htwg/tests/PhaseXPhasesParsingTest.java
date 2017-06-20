@@ -3,15 +3,12 @@
  */
 package org.xtext.de.htwg.tests;
 
-import org.eclipse.xtext.testing.InjectWith;
-import org.eclipse.xtext.testing.XtextRunner;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.xtext.de.htwg.tests.PhaseXPhasesInjectorProvider;
 
-@RunWith(XtextRunner.class)
-@InjectWith(PhaseXPhasesInjectorProvider.class)
-@SuppressWarnings("all")
+/* @RunWith(/* name is null */)
+@InjectWith(PhaseXPhasesInjectorProvider.class) */@SuppressWarnings("all")
 public class PhaseXPhasesParsingTest {
   @Test
   public void loadModel() {

@@ -3,12 +3,8 @@
  */
 package org.xtext.de.htwg.ide;
 
-import com.google.inject.Guice;
 import com.google.inject.Injector;
-import org.eclipse.xtext.util.Modules2;
-import org.xtext.de.htwg.PhasesRuntimeModule;
 import org.xtext.de.htwg.PhasesStandaloneSetup;
-import org.xtext.de.htwg.ide.PhasesIdeModule;
 
 /**
  * Initialization support for running Xtext languages as language servers.
@@ -17,8 +13,7 @@ import org.xtext.de.htwg.ide.PhasesIdeModule;
 public class PhasesIdeSetup extends PhasesStandaloneSetup {
   @Override
   public Injector createInjector() {
-    PhasesRuntimeModule _phasesRuntimeModule = new PhasesRuntimeModule();
-    PhasesIdeModule _phasesIdeModule = new PhasesIdeModule();
-    return Guice.createInjector(Modules2.mixin(_phasesRuntimeModule, _phasesIdeModule));
+    throw new Error("Unresolved compilation problems:"
+      + "\nType mismatch: cannot convert from PhasesIdeModule to Module");
   }
 }

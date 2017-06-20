@@ -9,8 +9,6 @@ import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
 import org.xtext.de.htwg.phases.Game
 import org.xtext.de.htwg.phases.Phase
-import java.lang.reflect.Array
-import java.util.LinkedList
 
 /**
  * Generates code from your model files on save.
@@ -19,45 +17,111 @@ import java.util.LinkedList
  */
 class PhasesGenerator extends AbstractGenerator {
 
+	String phaseType = "null"
+	String numbersTypes = "null"
+	String numberColors = "null"
+	String streetLenght = "null"
 	
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
+		val game = resource.contents.head as Game
 		
-		val game = resource.contents.head as Game;
-		val phases = new LinkedList();
-		phases.add(game.phase1);
-		phases.add(game.phase2);
-		phases.add(game.phase3);
-		phases.add(game.phase4);
-		phases.add(game.phase5);
-		for(Phase phase : phases){
+		for(Phase phase : game.phases){
+			phaseType = "null"
+			numbersTypes = "null"
+			numberColors = "null"
+			streetLenght = "null"
 			
-			if(phase.phaseType.numbersType!=null){
-				System.out.println(phase.phaseType.numbersType.name);
-				for(nuberTyps: phase.phaseType.numbersType.numbersType){
-					System.out.println(nuberTyps);
-					
-				}
-				fsa.generateFile('Phase'+phase.phaseNumber+'.java', 
-				"PhasenTyp: " + phase.phaseType.numbersType.name
-				+"\nPhasenIhalt: "+phase.phaseType.numbersType.numbersType
-				)
-			}
-			if(phase.phaseType.colorType!=null){
-				System.out.println(phase.phaseType.colorType.name);
-				System.out.println(phase.phaseType.colorType.numberColors);
-				fsa.generateFile('Phase'+phase.phaseNumber+'.java', 
-				"PhasenTyp: " + phase.phaseType.colorType.name
-				+"\nPhasenIhalt: "+phase.phaseType.colorType.numberColors
-				)
-			}
-			if(phase.phaseType.streetType!=null){
-				System.out.println(phase.phaseType.streetType.name);
-				System.out.println(phase.phaseType.streetType.streetLenght);
-				fsa.generateFile('Phase'+phase.phaseNumber+'.java', 
-				"PhasenTyp: " + phase.phaseType.streetType.name
-				+"\nPhasenIhalt: "+phase.phaseType.streetType.streetLenght
-				)
-			}
+			if(phase.phaseType.numbersType != null){
+		    	phaseType = phase.phaseType.numbersType.name.toString;
+		    	numbersTypes = phase.phaseType.numbersType.numbersType.toString;
+		    }
+		    if(phase.phaseType.colorType != null){
+		    	phaseType = phase.phaseType.colorType.name.toString;
+		    	numberColors = phase.phaseType.colorType.numberColors.toString;
+		    	
+		    }
+		    if(phase.phaseType.streetType != null){
+		    	phaseType = phase.phaseType.streetType.name.toString;
+		    	streetLenght = phase.phaseType.streetType.streetLenght.toString;
+		    }
+		    
+			fsa.generateFile('Phase'+phase.phaseNumber+'.java', 
+			"
+				package model.phase.impl;
+				import model.deck.IDeckOfCards;
+				import model.phase.DeckNotFitException;
+				import model.phase.IPhase;
+				import model.stack.ICardStack;
+				import java.util.List;
+				
+				/**
+				 * Created by Tarek on 24.09.2015. Be grateful for this superior Code!
+				 *
+				 * edited: Konraifen88
+				 * date: 30.09.2015
+				 * merged phase checker and getter
+				 * edited: daschwin
+				 * date: 200.07.2017
+				 * to be generated
+				 */
+				public class Phases implements IPhase {
+				
+				    public static final int PHASE_NUMBER = "+phase.phaseNumber.toString+"
+					private static final String DESCRIPTION_PHASE = \""+phase.phaseDescription.toString+"\";
+				    private Boolean isNumberPhase = false;
+				    private String phaseType = \""+phaseType+"\";
+				    private String[] numbersType = "+numbersTypes+";
+				    private Integer numberColors = "+numberColors+";
+				    private Integer streetLenght = "+streetLenght+";
+				    public Phases() {
+				        //empty
+				    }
+				
+				    @Override
+				    public String getDescription() {
+				        return DESCRIPTION_PHASE;
+				    }
+				
+				    @Override
+				    public List<ICardStack> splitAndCheckPhase(IDeckOfCards phase) throws DeckNotFitException {
+				
+				        if(phaseType.equals(\"NUMBERS\")) {
+				            isNumberPhase = true;
+				            PhaseNumber phaseNumber = new PhaseNumber();
+				            return phaseNumber.splitAndCheckPhase(phase, numbersType);
+				        }
+				        if(phaseType.equals(\"COLORS\")) {
+				            PhaseColor phaseNumber = new PhaseColor();
+				            return phaseNumber.splitAndCheckPhase(phase, numberColors);
+				        }
+				        if(phaseType.equals(\"STREET\")) {
+				            PhaseStreet phaseNumber = new PhaseStreet();
+				            return phaseNumber.splitAndCheckPhase(phase, streetLenght);
+				        }
+				        throw new DeckNotFitException();
+				    }
+				
+				    @Override
+				    public IPhase getNextPhase() {
+				        return new Phase5();
+				    }
+				
+				    @Override
+				    public int getPhaseNumber() {
+				        return PHASE_NUMBER;
+				    }
+				
+				    @Override
+				    public boolean isNumberPhase() {
+				        return isNumberPhase;
+				    }
+				
+				    @Override
+				    public String toString() {
+				        return \"Phase\"+PHASE_NUMBER;
+				    }
+				}"+"" )
+			
 		}
 	}
 }

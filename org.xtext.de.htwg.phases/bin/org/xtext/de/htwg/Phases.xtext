@@ -3,18 +3,25 @@ grammar org.xtext.de.htwg.Phases with org.eclipse.xtext.common.Terminals
 generate phases "http://www.xtext.org/de/htwg/Phases"
 
 Game:
-	(phases += Phase)*
+	phase1=Phase
+	phase2=Phase
+	phase3=Phase
+	phase4=Phase
+	phase5=Phase
 ;
 
 Phase:
-	'PHASE' PhaseType;
+	'PHASE' 
+	phaseNumber=INT
+	phaseType=PhaseType
+	;
 
 
 PhaseType:
 	(streetType=STREET_TYPE | numbersType=NUMBERS_TYPE | colorType=COLORS_TYPE);
 
 NUMBERS_TYPE:
-	name = 'NUMBERS' ":" numbersType += NUMBERS
+	name = 'NUMBERS' ":" (numbersType += NUMBERS)*
 ;
 
 NUMBERS:

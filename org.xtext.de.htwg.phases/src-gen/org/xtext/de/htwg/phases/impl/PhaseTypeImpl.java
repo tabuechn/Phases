@@ -10,6 +10,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.de.htwg.phases.COLORS_TYPE;
 import org.xtext.de.htwg.phases.NUMBERS_TYPE;
@@ -32,7 +33,7 @@ import org.xtext.de.htwg.phases.STREET_TYPE;
  *
  * @generated
  */
-public class PhaseTypeImpl extends PhaseImpl implements PhaseType
+public class PhaseTypeImpl extends MinimalEObjectImpl.Container implements PhaseType
 {
   /**
    * The cached value of the '{@link #getStreetType() <em>Street Type</em>}' containment reference.

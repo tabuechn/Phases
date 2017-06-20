@@ -10,6 +10,13 @@ import org.eclipse.emf.ecore.EObject;
  * A representation of the model object '<em><b>Phase</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link org.xtext.de.htwg.phases.Phase#getPhaseNumber <em>Phase Number</em>}</li>
+ *   <li>{@link org.xtext.de.htwg.phases.Phase#getPhaseType <em>Phase Type</em>}</li>
+ * </ul>
  *
  * @see org.xtext.de.htwg.phases.PhasesPackage#getPhase()
  * @model
@@ -17,4 +24,56 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Phase extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Phase Number</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Phase Number</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Phase Number</em>' attribute.
+   * @see #setPhaseNumber(int)
+   * @see org.xtext.de.htwg.phases.PhasesPackage#getPhase_PhaseNumber()
+   * @model
+   * @generated
+   */
+  int getPhaseNumber();
+
+  /**
+   * Sets the value of the '{@link org.xtext.de.htwg.phases.Phase#getPhaseNumber <em>Phase Number</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Phase Number</em>' attribute.
+   * @see #getPhaseNumber()
+   * @generated
+   */
+  void setPhaseNumber(int value);
+
+  /**
+   * Returns the value of the '<em><b>Phase Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Phase Type</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Phase Type</em>' containment reference.
+   * @see #setPhaseType(PhaseType)
+   * @see org.xtext.de.htwg.phases.PhasesPackage#getPhase_PhaseType()
+   * @model containment="true"
+   * @generated
+   */
+  PhaseType getPhaseType();
+
+  /**
+   * Sets the value of the '{@link org.xtext.de.htwg.phases.Phase#getPhaseType <em>Phase Type</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Phase Type</em>' containment reference.
+   * @see #getPhaseType()
+   * @generated
+   */
+  void setPhaseType(PhaseType value);
+
 } // Phase

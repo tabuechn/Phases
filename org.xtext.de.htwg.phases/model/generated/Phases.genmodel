@@ -7,9 +7,16 @@
   <genPackages prefix="Phases" basePackage="org.xtext.de.htwg" disposableProviderFactory="true"
       fileExtensions="phases" ecorePackage="Phases.ecore#/">
     <genClasses ecoreClass="Phases.ecore#//Game">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Phases.ecore#//Game/phases"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Phases.ecore#//Game/phase1"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Phases.ecore#//Game/phase2"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Phases.ecore#//Game/phase3"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Phases.ecore#//Game/phase4"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Phases.ecore#//Game/phase5"/>
     </genClasses>
-    <genClasses ecoreClass="Phases.ecore#//Phase"/>
+    <genClasses ecoreClass="Phases.ecore#//Phase">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Phases.ecore#//Phase/phaseNumber"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Phases.ecore#//Phase/phaseType"/>
+    </genClasses>
     <genClasses ecoreClass="Phases.ecore#//PhaseType">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Phases.ecore#//PhaseType/streetType"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Phases.ecore#//PhaseType/numbersType"/>

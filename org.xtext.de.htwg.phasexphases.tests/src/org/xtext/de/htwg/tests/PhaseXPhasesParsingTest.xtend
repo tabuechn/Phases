@@ -10,20 +10,14 @@ import org.eclipse.xtext.testing.util.ParseHelper
 import org.junit.Assert
 import org.junit.Test
 import org.junit.runner.RunWith
-import org.xtext.de.htwg.phaseXPhases.Model
 
 @RunWith(XtextRunner)
 @InjectWith(PhaseXPhasesInjectorProvider)
 class PhaseXPhasesParsingTest {
-	@Inject
-	ParseHelper<Model> parseHelper
+
 	
 	@Test
 	def void loadModel() {
-		val result = parseHelper.parse('''
-			Hello Xtext!
-		''')
-		Assert.assertNotNull(result)
-		Assert.assertTrue(result.eResource.errors.isEmpty)
+
 	}
 }

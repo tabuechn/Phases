@@ -3,8 +3,6 @@
  */
 package org.xtext.de.htwg.phases;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -16,7 +14,11 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.de.htwg.phases.Game#getPhases <em>Phases</em>}</li>
+ *   <li>{@link org.xtext.de.htwg.phases.Game#getPhase1 <em>Phase1</em>}</li>
+ *   <li>{@link org.xtext.de.htwg.phases.Game#getPhase2 <em>Phase2</em>}</li>
+ *   <li>{@link org.xtext.de.htwg.phases.Game#getPhase3 <em>Phase3</em>}</li>
+ *   <li>{@link org.xtext.de.htwg.phases.Game#getPhase4 <em>Phase4</em>}</li>
+ *   <li>{@link org.xtext.de.htwg.phases.Game#getPhase5 <em>Phase5</em>}</li>
  * </ul>
  *
  * @see org.xtext.de.htwg.phases.PhasesPackage#getGame()
@@ -26,19 +28,133 @@ import org.eclipse.emf.ecore.EObject;
 public interface Game extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Phases</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.de.htwg.phases.Phase}.
+   * Returns the value of the '<em><b>Phase1</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Phases</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Phase1</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Phases</em>' containment reference list.
-   * @see org.xtext.de.htwg.phases.PhasesPackage#getGame_Phases()
+   * @return the value of the '<em>Phase1</em>' containment reference.
+   * @see #setPhase1(Phase)
+   * @see org.xtext.de.htwg.phases.PhasesPackage#getGame_Phase1()
    * @model containment="true"
    * @generated
    */
-  EList<Phase> getPhases();
+  Phase getPhase1();
+
+  /**
+   * Sets the value of the '{@link org.xtext.de.htwg.phases.Game#getPhase1 <em>Phase1</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Phase1</em>' containment reference.
+   * @see #getPhase1()
+   * @generated
+   */
+  void setPhase1(Phase value);
+
+  /**
+   * Returns the value of the '<em><b>Phase2</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Phase2</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Phase2</em>' containment reference.
+   * @see #setPhase2(Phase)
+   * @see org.xtext.de.htwg.phases.PhasesPackage#getGame_Phase2()
+   * @model containment="true"
+   * @generated
+   */
+  Phase getPhase2();
+
+  /**
+   * Sets the value of the '{@link org.xtext.de.htwg.phases.Game#getPhase2 <em>Phase2</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Phase2</em>' containment reference.
+   * @see #getPhase2()
+   * @generated
+   */
+  void setPhase2(Phase value);
+
+  /**
+   * Returns the value of the '<em><b>Phase3</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Phase3</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Phase3</em>' containment reference.
+   * @see #setPhase3(Phase)
+   * @see org.xtext.de.htwg.phases.PhasesPackage#getGame_Phase3()
+   * @model containment="true"
+   * @generated
+   */
+  Phase getPhase3();
+
+  /**
+   * Sets the value of the '{@link org.xtext.de.htwg.phases.Game#getPhase3 <em>Phase3</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Phase3</em>' containment reference.
+   * @see #getPhase3()
+   * @generated
+   */
+  void setPhase3(Phase value);
+
+  /**
+   * Returns the value of the '<em><b>Phase4</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Phase4</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Phase4</em>' containment reference.
+   * @see #setPhase4(Phase)
+   * @see org.xtext.de.htwg.phases.PhasesPackage#getGame_Phase4()
+   * @model containment="true"
+   * @generated
+   */
+  Phase getPhase4();
+
+  /**
+   * Sets the value of the '{@link org.xtext.de.htwg.phases.Game#getPhase4 <em>Phase4</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Phase4</em>' containment reference.
+   * @see #getPhase4()
+   * @generated
+   */
+  void setPhase4(Phase value);
+
+  /**
+   * Returns the value of the '<em><b>Phase5</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Phase5</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Phase5</em>' containment reference.
+   * @see #setPhase5(Phase)
+   * @see org.xtext.de.htwg.phases.PhasesPackage#getGame_Phase5()
+   * @model containment="true"
+   * @generated
+   */
+  Phase getPhase5();
+
+  /**
+   * Sets the value of the '{@link org.xtext.de.htwg.phases.Game#getPhase5 <em>Phase5</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Phase5</em>' containment reference.
+   * @see #getPhase5()
+   * @generated
+   */
+  void setPhase5(Phase value);
 
 } // Game

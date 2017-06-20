@@ -3,10 +3,8 @@
  */
 package org.xtext.de.htwg.tests;
 
-import com.google.inject.Inject;
 import org.eclipse.xtext.testing.InjectWith;
 import org.eclipse.xtext.testing.XtextRunner;
-import org.eclipse.xtext.testing.util.ParseHelper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.xtext.de.htwg.tests.PhaseXPhasesInjectorProvider;
@@ -15,15 +13,7 @@ import org.xtext.de.htwg.tests.PhaseXPhasesInjectorProvider;
 @InjectWith(PhaseXPhasesInjectorProvider.class)
 @SuppressWarnings("all")
 public class PhaseXPhasesParsingTest {
-  @Inject
-  private /* ParseHelper<Model> */Object parseHelper;
-  
   @Test
   public void loadModel() {
-    throw new Error("Unresolved compilation problems:"
-      + "\nThe field PhaseXPhasesParsingTest.parseHelper refers to the missing type Model"
-      + "\neResource cannot be resolved"
-      + "\nerrors cannot be resolved"
-      + "\nisEmpty cannot be resolved");
   }
 }

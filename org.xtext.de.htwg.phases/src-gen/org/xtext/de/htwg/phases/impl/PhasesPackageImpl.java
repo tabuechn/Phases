@@ -144,9 +144,49 @@ public class PhasesPackageImpl extends EPackageImpl implements PhasesPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getGame_Phases()
+  public EReference getGame_Phase1()
   {
     return (EReference)gameEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getGame_Phase2()
+  {
+    return (EReference)gameEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getGame_Phase3()
+  {
+    return (EReference)gameEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getGame_Phase4()
+  {
+    return (EReference)gameEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getGame_Phase5()
+  {
+    return (EReference)gameEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -157,6 +197,26 @@ public class PhasesPackageImpl extends EPackageImpl implements PhasesPackage
   public EClass getPhase()
   {
     return phaseEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getPhase_PhaseNumber()
+  {
+    return (EAttribute)phaseEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getPhase_PhaseType()
+  {
+    return (EReference)phaseEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -320,9 +380,15 @@ public class PhasesPackageImpl extends EPackageImpl implements PhasesPackage
 
     // Create classes and their features
     gameEClass = createEClass(GAME);
-    createEReference(gameEClass, GAME__PHASES);
+    createEReference(gameEClass, GAME__PHASE1);
+    createEReference(gameEClass, GAME__PHASE2);
+    createEReference(gameEClass, GAME__PHASE3);
+    createEReference(gameEClass, GAME__PHASE4);
+    createEReference(gameEClass, GAME__PHASE5);
 
     phaseEClass = createEClass(PHASE);
+    createEAttribute(phaseEClass, PHASE__PHASE_NUMBER);
+    createEReference(phaseEClass, PHASE__PHASE_TYPE);
 
     phaseTypeEClass = createEClass(PHASE_TYPE);
     createEReference(phaseTypeEClass, PHASE_TYPE__STREET_TYPE);
@@ -371,13 +437,18 @@ public class PhasesPackageImpl extends EPackageImpl implements PhasesPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
-    phaseTypeEClass.getESuperTypes().add(this.getPhase());
 
     // Initialize classes and features; add operations and parameters
     initEClass(gameEClass, Game.class, "Game", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getGame_Phases(), this.getPhase(), null, "phases", null, 0, -1, Game.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGame_Phase1(), this.getPhase(), null, "phase1", null, 0, 1, Game.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGame_Phase2(), this.getPhase(), null, "phase2", null, 0, 1, Game.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGame_Phase3(), this.getPhase(), null, "phase3", null, 0, 1, Game.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGame_Phase4(), this.getPhase(), null, "phase4", null, 0, 1, Game.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGame_Phase5(), this.getPhase(), null, "phase5", null, 0, 1, Game.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(phaseEClass, Phase.class, "Phase", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getPhase_PhaseNumber(), ecorePackage.getEInt(), "phaseNumber", null, 0, 1, Phase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getPhase_PhaseType(), this.getPhaseType(), null, "phaseType", null, 0, 1, Phase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(phaseTypeEClass, PhaseType.class, "PhaseType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getPhaseType_StreetType(), this.getSTREET_TYPE(), null, "streetType", null, 0, 1, PhaseType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

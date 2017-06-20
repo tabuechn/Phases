@@ -68,13 +68,49 @@ public interface PhasesPackage extends EPackage
   int GAME = 0;
 
   /**
-   * The feature id for the '<em><b>Phases</b></em>' containment reference list.
+   * The feature id for the '<em><b>Phase1</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GAME__PHASES = 0;
+  int GAME__PHASE1 = 0;
+
+  /**
+   * The feature id for the '<em><b>Phase2</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GAME__PHASE2 = 1;
+
+  /**
+   * The feature id for the '<em><b>Phase3</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GAME__PHASE3 = 2;
+
+  /**
+   * The feature id for the '<em><b>Phase4</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GAME__PHASE4 = 3;
+
+  /**
+   * The feature id for the '<em><b>Phase5</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GAME__PHASE5 = 4;
 
   /**
    * The number of structural features of the '<em>Game</em>' class.
@@ -83,7 +119,7 @@ public interface PhasesPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GAME_FEATURE_COUNT = 1;
+  int GAME_FEATURE_COUNT = 5;
 
   /**
    * The meta object id for the '{@link org.xtext.de.htwg.phases.impl.PhaseImpl <em>Phase</em>}' class.
@@ -96,13 +132,31 @@ public interface PhasesPackage extends EPackage
   int PHASE = 1;
 
   /**
+   * The feature id for the '<em><b>Phase Number</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PHASE__PHASE_NUMBER = 0;
+
+  /**
+   * The feature id for the '<em><b>Phase Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PHASE__PHASE_TYPE = 1;
+
+  /**
    * The number of structural features of the '<em>Phase</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PHASE_FEATURE_COUNT = 0;
+  int PHASE_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link org.xtext.de.htwg.phases.impl.PhaseTypeImpl <em>Phase Type</em>}' class.
@@ -121,7 +175,7 @@ public interface PhasesPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PHASE_TYPE__STREET_TYPE = PHASE_FEATURE_COUNT + 0;
+  int PHASE_TYPE__STREET_TYPE = 0;
 
   /**
    * The feature id for the '<em><b>Numbers Type</b></em>' containment reference.
@@ -130,7 +184,7 @@ public interface PhasesPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PHASE_TYPE__NUMBERS_TYPE = PHASE_FEATURE_COUNT + 1;
+  int PHASE_TYPE__NUMBERS_TYPE = 1;
 
   /**
    * The feature id for the '<em><b>Color Type</b></em>' containment reference.
@@ -139,7 +193,7 @@ public interface PhasesPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PHASE_TYPE__COLOR_TYPE = PHASE_FEATURE_COUNT + 2;
+  int PHASE_TYPE__COLOR_TYPE = 2;
 
   /**
    * The number of structural features of the '<em>Phase Type</em>' class.
@@ -148,7 +202,7 @@ public interface PhasesPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PHASE_TYPE_FEATURE_COUNT = PHASE_FEATURE_COUNT + 3;
+  int PHASE_TYPE_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link org.xtext.de.htwg.phases.impl.NUMBERS_TYPEImpl <em>NUMBERS TYPE</em>}' class.
@@ -273,15 +327,59 @@ public interface PhasesPackage extends EPackage
   EClass getGame();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.de.htwg.phases.Game#getPhases <em>Phases</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.de.htwg.phases.Game#getPhase1 <em>Phase1</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Phases</em>'.
-   * @see org.xtext.de.htwg.phases.Game#getPhases()
+   * @return the meta object for the containment reference '<em>Phase1</em>'.
+   * @see org.xtext.de.htwg.phases.Game#getPhase1()
    * @see #getGame()
    * @generated
    */
-  EReference getGame_Phases();
+  EReference getGame_Phase1();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.de.htwg.phases.Game#getPhase2 <em>Phase2</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Phase2</em>'.
+   * @see org.xtext.de.htwg.phases.Game#getPhase2()
+   * @see #getGame()
+   * @generated
+   */
+  EReference getGame_Phase2();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.de.htwg.phases.Game#getPhase3 <em>Phase3</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Phase3</em>'.
+   * @see org.xtext.de.htwg.phases.Game#getPhase3()
+   * @see #getGame()
+   * @generated
+   */
+  EReference getGame_Phase3();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.de.htwg.phases.Game#getPhase4 <em>Phase4</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Phase4</em>'.
+   * @see org.xtext.de.htwg.phases.Game#getPhase4()
+   * @see #getGame()
+   * @generated
+   */
+  EReference getGame_Phase4();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.de.htwg.phases.Game#getPhase5 <em>Phase5</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Phase5</em>'.
+   * @see org.xtext.de.htwg.phases.Game#getPhase5()
+   * @see #getGame()
+   * @generated
+   */
+  EReference getGame_Phase5();
 
   /**
    * Returns the meta object for class '{@link org.xtext.de.htwg.phases.Phase <em>Phase</em>}'.
@@ -292,6 +390,28 @@ public interface PhasesPackage extends EPackage
    * @generated
    */
   EClass getPhase();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.de.htwg.phases.Phase#getPhaseNumber <em>Phase Number</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Phase Number</em>'.
+   * @see org.xtext.de.htwg.phases.Phase#getPhaseNumber()
+   * @see #getPhase()
+   * @generated
+   */
+  EAttribute getPhase_PhaseNumber();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.de.htwg.phases.Phase#getPhaseType <em>Phase Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Phase Type</em>'.
+   * @see org.xtext.de.htwg.phases.Phase#getPhaseType()
+   * @see #getPhase()
+   * @generated
+   */
+  EReference getPhase_PhaseType();
 
   /**
    * Returns the meta object for class '{@link org.xtext.de.htwg.phases.PhaseType <em>Phase Type</em>}'.
@@ -466,12 +586,44 @@ public interface PhasesPackage extends EPackage
     EClass GAME = eINSTANCE.getGame();
 
     /**
-     * The meta object literal for the '<em><b>Phases</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Phase1</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference GAME__PHASES = eINSTANCE.getGame_Phases();
+    EReference GAME__PHASE1 = eINSTANCE.getGame_Phase1();
+
+    /**
+     * The meta object literal for the '<em><b>Phase2</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference GAME__PHASE2 = eINSTANCE.getGame_Phase2();
+
+    /**
+     * The meta object literal for the '<em><b>Phase3</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference GAME__PHASE3 = eINSTANCE.getGame_Phase3();
+
+    /**
+     * The meta object literal for the '<em><b>Phase4</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference GAME__PHASE4 = eINSTANCE.getGame_Phase4();
+
+    /**
+     * The meta object literal for the '<em><b>Phase5</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference GAME__PHASE5 = eINSTANCE.getGame_Phase5();
 
     /**
      * The meta object literal for the '{@link org.xtext.de.htwg.phases.impl.PhaseImpl <em>Phase</em>}' class.
@@ -482,6 +634,22 @@ public interface PhasesPackage extends EPackage
      * @generated
      */
     EClass PHASE = eINSTANCE.getPhase();
+
+    /**
+     * The meta object literal for the '<em><b>Phase Number</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PHASE__PHASE_NUMBER = eINSTANCE.getPhase_PhaseNumber();
+
+    /**
+     * The meta object literal for the '<em><b>Phase Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PHASE__PHASE_TYPE = eINSTANCE.getPhase_PhaseType();
 
     /**
      * The meta object literal for the '{@link org.xtext.de.htwg.phases.impl.PhaseTypeImpl <em>Phase Type</em>}' class.

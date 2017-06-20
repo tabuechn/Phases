@@ -65,9 +65,9 @@ ruleGame
 	}
 	:
 	(
-		{ before(grammarAccess.getGameAccess().getPhasesAssignment()); }
-		(rule__Game__PhasesAssignment)*
-		{ after(grammarAccess.getGameAccess().getPhasesAssignment()); }
+		{ before(grammarAccess.getGameAccess().getGroup()); }
+		(rule__Game__Group__0)
+		{ after(grammarAccess.getGameAccess().getGroup()); }
 	)
 ;
 finally {
@@ -278,6 +278,141 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+rule__Game__Group__0
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__Game__Group__0__Impl
+	rule__Game__Group__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Game__Group__0__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getGameAccess().getPhase1Assignment_0()); }
+	(rule__Game__Phase1Assignment_0)
+	{ after(grammarAccess.getGameAccess().getPhase1Assignment_0()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Game__Group__1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__Game__Group__1__Impl
+	rule__Game__Group__2
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Game__Group__1__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getGameAccess().getPhase2Assignment_1()); }
+	(rule__Game__Phase2Assignment_1)
+	{ after(grammarAccess.getGameAccess().getPhase2Assignment_1()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Game__Group__2
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__Game__Group__2__Impl
+	rule__Game__Group__3
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Game__Group__2__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getGameAccess().getPhase3Assignment_2()); }
+	(rule__Game__Phase3Assignment_2)
+	{ after(grammarAccess.getGameAccess().getPhase3Assignment_2()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Game__Group__3
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__Game__Group__3__Impl
+	rule__Game__Group__4
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Game__Group__3__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getGameAccess().getPhase4Assignment_3()); }
+	(rule__Game__Phase4Assignment_3)
+	{ after(grammarAccess.getGameAccess().getPhase4Assignment_3()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Game__Group__4
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__Game__Group__4__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Game__Group__4__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getGameAccess().getPhase5Assignment_4()); }
+	(rule__Game__Phase5Assignment_4)
+	{ after(grammarAccess.getGameAccess().getPhase5Assignment_4()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
 rule__Phase__Group__0
 	@init {
 		int stackSize = keepStackSize();
@@ -311,6 +446,7 @@ rule__Phase__Group__1
 	}
 :
 	rule__Phase__Group__1__Impl
+	rule__Phase__Group__2
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -322,9 +458,35 @@ rule__Phase__Group__1__Impl
 	}
 :
 (
-	{ before(grammarAccess.getPhaseAccess().getPhaseTypeParserRuleCall_1()); }
-	rulePhaseType
-	{ after(grammarAccess.getPhaseAccess().getPhaseTypeParserRuleCall_1()); }
+	{ before(grammarAccess.getPhaseAccess().getPhaseNumberAssignment_1()); }
+	(rule__Phase__PhaseNumberAssignment_1)
+	{ after(grammarAccess.getPhaseAccess().getPhaseNumberAssignment_1()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Phase__Group__2
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__Phase__Group__2__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Phase__Group__2__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getPhaseAccess().getPhaseTypeAssignment_2()); }
+	(rule__Phase__PhaseTypeAssignment_2)
+	{ after(grammarAccess.getPhaseAccess().getPhaseTypeAssignment_2()); }
 )
 ;
 finally {
@@ -404,7 +566,7 @@ rule__NUMBERS_TYPE__Group__2__Impl
 :
 (
 	{ before(grammarAccess.getNUMBERS_TYPEAccess().getNumbersTypeAssignment_2()); }
-	(rule__NUMBERS_TYPE__NumbersTypeAssignment_2)
+	(rule__NUMBERS_TYPE__NumbersTypeAssignment_2)*
 	{ after(grammarAccess.getNUMBERS_TYPEAccess().getNumbersTypeAssignment_2()); }
 )
 ;
@@ -575,15 +737,105 @@ finally {
 }
 
 
-rule__Game__PhasesAssignment
+rule__Game__Phase1Assignment_0
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getGameAccess().getPhasesPhaseParserRuleCall_0()); }
+		{ before(grammarAccess.getGameAccess().getPhase1PhaseParserRuleCall_0_0()); }
 		rulePhase
-		{ after(grammarAccess.getGameAccess().getPhasesPhaseParserRuleCall_0()); }
+		{ after(grammarAccess.getGameAccess().getPhase1PhaseParserRuleCall_0_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Game__Phase2Assignment_1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getGameAccess().getPhase2PhaseParserRuleCall_1_0()); }
+		rulePhase
+		{ after(grammarAccess.getGameAccess().getPhase2PhaseParserRuleCall_1_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Game__Phase3Assignment_2
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getGameAccess().getPhase3PhaseParserRuleCall_2_0()); }
+		rulePhase
+		{ after(grammarAccess.getGameAccess().getPhase3PhaseParserRuleCall_2_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Game__Phase4Assignment_3
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getGameAccess().getPhase4PhaseParserRuleCall_3_0()); }
+		rulePhase
+		{ after(grammarAccess.getGameAccess().getPhase4PhaseParserRuleCall_3_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Game__Phase5Assignment_4
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getGameAccess().getPhase5PhaseParserRuleCall_4_0()); }
+		rulePhase
+		{ after(grammarAccess.getGameAccess().getPhase5PhaseParserRuleCall_4_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Phase__PhaseNumberAssignment_1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getPhaseAccess().getPhaseNumberINTTerminalRuleCall_1_0()); }
+		RULE_INT
+		{ after(grammarAccess.getPhaseAccess().getPhaseNumberINTTerminalRuleCall_1_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Phase__PhaseTypeAssignment_2
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getPhaseAccess().getPhaseTypePhaseTypeParserRuleCall_2_0()); }
+		rulePhaseType
+		{ after(grammarAccess.getPhaseAccess().getPhaseTypePhaseTypeParserRuleCall_2_0()); }
 	)
 ;
 finally {

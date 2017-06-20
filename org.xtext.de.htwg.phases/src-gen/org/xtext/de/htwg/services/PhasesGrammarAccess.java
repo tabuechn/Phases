@@ -24,37 +24,91 @@ public class PhasesGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public class GameElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.de.htwg.Phases.Game");
-		private final Assignment cPhasesAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cPhasesPhaseParserRuleCall_0 = (RuleCall)cPhasesAssignment.eContents().get(0);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cPhase1Assignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cPhase1PhaseParserRuleCall_0_0 = (RuleCall)cPhase1Assignment_0.eContents().get(0);
+		private final Assignment cPhase2Assignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cPhase2PhaseParserRuleCall_1_0 = (RuleCall)cPhase2Assignment_1.eContents().get(0);
+		private final Assignment cPhase3Assignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cPhase3PhaseParserRuleCall_2_0 = (RuleCall)cPhase3Assignment_2.eContents().get(0);
+		private final Assignment cPhase4Assignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cPhase4PhaseParserRuleCall_3_0 = (RuleCall)cPhase4Assignment_3.eContents().get(0);
+		private final Assignment cPhase5Assignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cPhase5PhaseParserRuleCall_4_0 = (RuleCall)cPhase5Assignment_4.eContents().get(0);
 		
 		//Game:
-		//	phases+=Phase*;
+		//	phase1=Phase
+		//	phase2=Phase
+		//	phase3=Phase
+		//	phase4=Phase
+		//	phase5=Phase;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//phases+=Phase*
-		public Assignment getPhasesAssignment() { return cPhasesAssignment; }
+		//phase1=Phase phase2=Phase phase3=Phase phase4=Phase phase5=Phase
+		public Group getGroup() { return cGroup; }
+		
+		//phase1=Phase
+		public Assignment getPhase1Assignment_0() { return cPhase1Assignment_0; }
 		
 		//Phase
-		public RuleCall getPhasesPhaseParserRuleCall_0() { return cPhasesPhaseParserRuleCall_0; }
+		public RuleCall getPhase1PhaseParserRuleCall_0_0() { return cPhase1PhaseParserRuleCall_0_0; }
+		
+		//phase2=Phase
+		public Assignment getPhase2Assignment_1() { return cPhase2Assignment_1; }
+		
+		//Phase
+		public RuleCall getPhase2PhaseParserRuleCall_1_0() { return cPhase2PhaseParserRuleCall_1_0; }
+		
+		//phase3=Phase
+		public Assignment getPhase3Assignment_2() { return cPhase3Assignment_2; }
+		
+		//Phase
+		public RuleCall getPhase3PhaseParserRuleCall_2_0() { return cPhase3PhaseParserRuleCall_2_0; }
+		
+		//phase4=Phase
+		public Assignment getPhase4Assignment_3() { return cPhase4Assignment_3; }
+		
+		//Phase
+		public RuleCall getPhase4PhaseParserRuleCall_3_0() { return cPhase4PhaseParserRuleCall_3_0; }
+		
+		//phase5=Phase
+		public Assignment getPhase5Assignment_4() { return cPhase5Assignment_4; }
+		
+		//Phase
+		public RuleCall getPhase5PhaseParserRuleCall_4_0() { return cPhase5PhaseParserRuleCall_4_0; }
 	}
 	public class PhaseElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.de.htwg.Phases.Phase");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cPHASEKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final RuleCall cPhaseTypeParserRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final Assignment cPhaseNumberAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cPhaseNumberINTTerminalRuleCall_1_0 = (RuleCall)cPhaseNumberAssignment_1.eContents().get(0);
+		private final Assignment cPhaseTypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cPhaseTypePhaseTypeParserRuleCall_2_0 = (RuleCall)cPhaseTypeAssignment_2.eContents().get(0);
 		
 		//Phase:
-		//	'PHASE' PhaseType;
+		//	'PHASE'
+		//	phaseNumber=INT
+		//	phaseType=PhaseType;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'PHASE' PhaseType
+		//'PHASE' phaseNumber=INT phaseType=PhaseType
 		public Group getGroup() { return cGroup; }
 		
 		//'PHASE'
 		public Keyword getPHASEKeyword_0() { return cPHASEKeyword_0; }
 		
+		//phaseNumber=INT
+		public Assignment getPhaseNumberAssignment_1() { return cPhaseNumberAssignment_1; }
+		
+		//INT
+		public RuleCall getPhaseNumberINTTerminalRuleCall_1_0() { return cPhaseNumberINTTerminalRuleCall_1_0; }
+		
+		//phaseType=PhaseType
+		public Assignment getPhaseTypeAssignment_2() { return cPhaseTypeAssignment_2; }
+		
 		//PhaseType
-		public RuleCall getPhaseTypeParserRuleCall_1() { return cPhaseTypeParserRuleCall_1; }
+		public RuleCall getPhaseTypePhaseTypeParserRuleCall_2_0() { return cPhaseTypePhaseTypeParserRuleCall_2_0; }
 	}
 	public class PhaseTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.de.htwg.Phases.PhaseType");
@@ -101,10 +155,10 @@ public class PhasesGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNumbersTypeNUMBERSParserRuleCall_2_0 = (RuleCall)cNumbersTypeAssignment_2.eContents().get(0);
 		
 		//NUMBERS_TYPE:
-		//	name='NUMBERS' ":" numbersType+=NUMBERS;
+		//	name='NUMBERS' ":" numbersType+=NUMBERS*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name='NUMBERS' ":" numbersType+=NUMBERS
+		//name='NUMBERS' ":" numbersType+=NUMBERS*
 		public Group getGroup() { return cGroup; }
 		
 		//name='NUMBERS'
@@ -116,7 +170,7 @@ public class PhasesGrammarAccess extends AbstractGrammarElementFinder {
 		//":"
 		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
 		
-		//numbersType+=NUMBERS
+		//numbersType+=NUMBERS*
 		public Assignment getNumbersTypeAssignment_2() { return cNumbersTypeAssignment_2; }
 		
 		//NUMBERS
@@ -263,7 +317,11 @@ public class PhasesGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//Game:
-	//	phases+=Phase*;
+	//	phase1=Phase
+	//	phase2=Phase
+	//	phase3=Phase
+	//	phase4=Phase
+	//	phase5=Phase;
 	public GameElements getGameAccess() {
 		return pGame;
 	}
@@ -273,7 +331,9 @@ public class PhasesGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Phase:
-	//	'PHASE' PhaseType;
+	//	'PHASE'
+	//	phaseNumber=INT
+	//	phaseType=PhaseType;
 	public PhaseElements getPhaseAccess() {
 		return pPhase;
 	}
@@ -293,7 +353,7 @@ public class PhasesGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//NUMBERS_TYPE:
-	//	name='NUMBERS' ":" numbersType+=NUMBERS;
+	//	name='NUMBERS' ":" numbersType+=NUMBERS*;
 	public NUMBERS_TYPEElements getNUMBERS_TYPEAccess() {
 		return pNUMBERS_TYPE;
 	}

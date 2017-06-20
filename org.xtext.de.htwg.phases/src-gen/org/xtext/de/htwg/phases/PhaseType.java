@@ -3,6 +3,7 @@
  */
 package org.xtext.de.htwg.phases;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,7 +23,7 @@ package org.xtext.de.htwg.phases;
  * @model
  * @generated
  */
-public interface PhaseType extends Phase
+public interface PhaseType extends EObject
 {
   /**
    * Returns the value of the '<em><b>Street Type</b></em>' containment reference.

@@ -3,10 +3,20 @@
  */
 package org.xtext.de.htwg.generator;
 
+import com.google.common.base.Objects;
+import java.util.LinkedList;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
+import org.eclipse.xtext.xbase.lib.IterableExtensions;
+import org.xtext.de.htwg.phases.COLORS_TYPE;
+import org.xtext.de.htwg.phases.Game;
+import org.xtext.de.htwg.phases.NUMBERS_TYPE;
+import org.xtext.de.htwg.phases.Phase;
+import org.xtext.de.htwg.phases.STREET_TYPE;
 
 /**
  * Generates code from your model files on save.
@@ -17,6 +27,65 @@ import org.eclipse.xtext.generator.IGeneratorContext;
 public class PhasesGenerator extends AbstractGenerator {
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
-    fsa.generateFile("greetings.java", resource.getAllContents().toString());
+    EObject _head = IterableExtensions.<EObject>head(resource.getContents());
+    final Game game = ((Game) _head);
+    final LinkedList<Phase> phases = new LinkedList<Phase>();
+    phases.add(game.getPhase1());
+    phases.add(game.getPhase2());
+    phases.add(game.getPhase3());
+    phases.add(game.getPhase4());
+    phases.add(game.getPhase5());
+    for (final Phase phase : phases) {
+      {
+        NUMBERS_TYPE _numbersType = phase.getPhaseType().getNumbersType();
+        boolean _notEquals = (!Objects.equal(_numbersType, null));
+        if (_notEquals) {
+          System.out.println(phase.getPhaseType().getNumbersType().getName());
+          EList<String> _numbersType_1 = phase.getPhaseType().getNumbersType().getNumbersType();
+          for (final String nuberTyps : _numbersType_1) {
+            System.out.println(nuberTyps);
+          }
+          int _phaseNumber = phase.getPhaseNumber();
+          String _plus = ("Phase" + Integer.valueOf(_phaseNumber));
+          String _plus_1 = (_plus + ".java");
+          String _name = phase.getPhaseType().getNumbersType().getName();
+          String _plus_2 = ("PhasenTyp: " + _name);
+          String _plus_3 = (_plus_2 + "\nPhasenIhalt: ");
+          EList<String> _numbersType_2 = phase.getPhaseType().getNumbersType().getNumbersType();
+          String _plus_4 = (_plus_3 + _numbersType_2);
+          fsa.generateFile(_plus_1, _plus_4);
+        }
+        COLORS_TYPE _colorType = phase.getPhaseType().getColorType();
+        boolean _notEquals_1 = (!Objects.equal(_colorType, null));
+        if (_notEquals_1) {
+          System.out.println(phase.getPhaseType().getColorType().getName());
+          System.out.println(phase.getPhaseType().getColorType().getNumberColors());
+          int _phaseNumber_1 = phase.getPhaseNumber();
+          String _plus_5 = ("Phase" + Integer.valueOf(_phaseNumber_1));
+          String _plus_6 = (_plus_5 + ".java");
+          String _name_1 = phase.getPhaseType().getColorType().getName();
+          String _plus_7 = ("PhasenTyp: " + _name_1);
+          String _plus_8 = (_plus_7 + "\nPhasenIhalt: ");
+          int _numberColors = phase.getPhaseType().getColorType().getNumberColors();
+          String _plus_9 = (_plus_8 + Integer.valueOf(_numberColors));
+          fsa.generateFile(_plus_6, _plus_9);
+        }
+        STREET_TYPE _streetType = phase.getPhaseType().getStreetType();
+        boolean _notEquals_2 = (!Objects.equal(_streetType, null));
+        if (_notEquals_2) {
+          System.out.println(phase.getPhaseType().getStreetType().getName());
+          System.out.println(phase.getPhaseType().getStreetType().getStreetLenght());
+          int _phaseNumber_2 = phase.getPhaseNumber();
+          String _plus_10 = ("Phase" + Integer.valueOf(_phaseNumber_2));
+          String _plus_11 = (_plus_10 + ".java");
+          String _name_2 = phase.getPhaseType().getStreetType().getName();
+          String _plus_12 = ("PhasenTyp: " + _name_2);
+          String _plus_13 = (_plus_12 + "\nPhasenIhalt: ");
+          int _streetLenght = phase.getPhaseType().getStreetType().getStreetLenght();
+          String _plus_14 = (_plus_13 + Integer.valueOf(_streetLenght));
+          fsa.generateFile(_plus_11, _plus_14);
+        }
+      }
+    }
   }
 }

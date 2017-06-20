@@ -33,11 +33,18 @@ public class PhasesParser extends AbstractContentAssistParser {
 				{
 					put(grammarAccess.getPhaseTypeAccess().getAlternatives(), "rule__PhaseType__Alternatives");
 					put(grammarAccess.getNUMBERSAccess().getAlternatives(), "rule__NUMBERS__Alternatives");
+					put(grammarAccess.getGameAccess().getGroup(), "rule__Game__Group__0");
 					put(grammarAccess.getPhaseAccess().getGroup(), "rule__Phase__Group__0");
 					put(grammarAccess.getNUMBERS_TYPEAccess().getGroup(), "rule__NUMBERS_TYPE__Group__0");
 					put(grammarAccess.getCOLORS_TYPEAccess().getGroup(), "rule__COLORS_TYPE__Group__0");
 					put(grammarAccess.getSTREET_TYPEAccess().getGroup(), "rule__STREET_TYPE__Group__0");
-					put(grammarAccess.getGameAccess().getPhasesAssignment(), "rule__Game__PhasesAssignment");
+					put(grammarAccess.getGameAccess().getPhase1Assignment_0(), "rule__Game__Phase1Assignment_0");
+					put(grammarAccess.getGameAccess().getPhase2Assignment_1(), "rule__Game__Phase2Assignment_1");
+					put(grammarAccess.getGameAccess().getPhase3Assignment_2(), "rule__Game__Phase3Assignment_2");
+					put(grammarAccess.getGameAccess().getPhase4Assignment_3(), "rule__Game__Phase4Assignment_3");
+					put(grammarAccess.getGameAccess().getPhase5Assignment_4(), "rule__Game__Phase5Assignment_4");
+					put(grammarAccess.getPhaseAccess().getPhaseNumberAssignment_1(), "rule__Phase__PhaseNumberAssignment_1");
+					put(grammarAccess.getPhaseAccess().getPhaseTypeAssignment_2(), "rule__Phase__PhaseTypeAssignment_2");
 					put(grammarAccess.getPhaseTypeAccess().getStreetTypeAssignment_0(), "rule__PhaseType__StreetTypeAssignment_0");
 					put(grammarAccess.getPhaseTypeAccess().getNumbersTypeAssignment_1(), "rule__PhaseType__NumbersTypeAssignment_1");
 					put(grammarAccess.getPhaseTypeAccess().getColorTypeAssignment_2(), "rule__PhaseType__ColorTypeAssignment_2");

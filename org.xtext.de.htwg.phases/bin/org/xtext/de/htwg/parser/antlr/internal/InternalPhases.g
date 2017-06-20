@@ -77,23 +77,101 @@ ruleGame returns [EObject current=null]
 }:
 	(
 		(
-			{
-				newCompositeNode(grammarAccess.getGameAccess().getPhasesPhaseParserRuleCall_0());
-			}
-			lv_phases_0_0=rulePhase
-			{
-				if ($current==null) {
-					$current = createModelElementForParent(grammarAccess.getGameRule());
+			(
+				{
+					newCompositeNode(grammarAccess.getGameAccess().getPhase1PhaseParserRuleCall_0_0());
 				}
-				add(
-					$current,
-					"phases",
-					lv_phases_0_0,
-					"org.xtext.de.htwg.Phases.Phase");
-				afterParserOrEnumRuleCall();
-			}
+				lv_phase1_0_0=rulePhase
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getGameRule());
+					}
+					set(
+						$current,
+						"phase1",
+						lv_phase1_0_0,
+						"org.xtext.de.htwg.Phases.Phase");
+					afterParserOrEnumRuleCall();
+				}
+			)
 		)
-	)*
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getGameAccess().getPhase2PhaseParserRuleCall_1_0());
+				}
+				lv_phase2_1_0=rulePhase
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getGameRule());
+					}
+					set(
+						$current,
+						"phase2",
+						lv_phase2_1_0,
+						"org.xtext.de.htwg.Phases.Phase");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getGameAccess().getPhase3PhaseParserRuleCall_2_0());
+				}
+				lv_phase3_2_0=rulePhase
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getGameRule());
+					}
+					set(
+						$current,
+						"phase3",
+						lv_phase3_2_0,
+						"org.xtext.de.htwg.Phases.Phase");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getGameAccess().getPhase4PhaseParserRuleCall_3_0());
+				}
+				lv_phase4_3_0=rulePhase
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getGameRule());
+					}
+					set(
+						$current,
+						"phase4",
+						lv_phase4_3_0,
+						"org.xtext.de.htwg.Phases.Phase");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getGameAccess().getPhase5PhaseParserRuleCall_4_0());
+				}
+				lv_phase5_4_0=rulePhase
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getGameRule());
+					}
+					set(
+						$current,
+						"phase5",
+						lv_phase5_4_0,
+						"org.xtext.de.htwg.Phases.Phase");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+	)
 ;
 
 // Entry rule entryRulePhase
@@ -116,14 +194,43 @@ rulePhase returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getPhaseAccess().getPHASEKeyword_0());
 		}
-		{
-			newCompositeNode(grammarAccess.getPhaseAccess().getPhaseTypeParserRuleCall_1());
-		}
-		this_PhaseType_1=rulePhaseType
-		{
-			$current = $this_PhaseType_1.current;
-			afterParserOrEnumRuleCall();
-		}
+		(
+			(
+				lv_phaseNumber_1_0=RULE_INT
+				{
+					newLeafNode(lv_phaseNumber_1_0, grammarAccess.getPhaseAccess().getPhaseNumberINTTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getPhaseRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"phaseNumber",
+						lv_phaseNumber_1_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getPhaseAccess().getPhaseTypePhaseTypeParserRuleCall_2_0());
+				}
+				lv_phaseType_2_0=rulePhaseType
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getPhaseRule());
+					}
+					set(
+						$current,
+						"phaseType",
+						lv_phaseType_2_0,
+						"org.xtext.de.htwg.Phases.PhaseType");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
 	)
 ;
 
@@ -257,7 +364,7 @@ ruleNUMBERS_TYPE returns [EObject current=null]
 					afterParserOrEnumRuleCall();
 				}
 			)
-		)
+		)*
 	)
 ;
 

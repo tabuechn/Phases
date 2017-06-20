@@ -3,22 +3,65 @@
  */
 package org.xtext.de.htwg.phases.impl;
 
-import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.de.htwg.phases.Phase;
+import org.xtext.de.htwg.phases.PhaseType;
 import org.xtext.de.htwg.phases.PhasesPackage;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Phase</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link org.xtext.de.htwg.phases.impl.PhaseImpl#getPhaseNumber <em>Phase Number</em>}</li>
+ *   <li>{@link org.xtext.de.htwg.phases.impl.PhaseImpl#getPhaseType <em>Phase Type</em>}</li>
+ * </ul>
  *
  * @generated
  */
 public class PhaseImpl extends MinimalEObjectImpl.Container implements Phase
 {
+  /**
+   * The default value of the '{@link #getPhaseNumber() <em>Phase Number</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPhaseNumber()
+   * @generated
+   * @ordered
+   */
+  protected static final int PHASE_NUMBER_EDEFAULT = 0;
+
+  /**
+   * The cached value of the '{@link #getPhaseNumber() <em>Phase Number</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPhaseNumber()
+   * @generated
+   * @ordered
+   */
+  protected int phaseNumber = PHASE_NUMBER_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getPhaseType() <em>Phase Type</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPhaseType()
+   * @generated
+   * @ordered
+   */
+  protected PhaseType phaseType;
+
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -38,6 +81,186 @@ public class PhaseImpl extends MinimalEObjectImpl.Container implements Phase
   protected EClass eStaticClass()
   {
     return PhasesPackage.Literals.PHASE;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public int getPhaseNumber()
+  {
+    return phaseNumber;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setPhaseNumber(int newPhaseNumber)
+  {
+    int oldPhaseNumber = phaseNumber;
+    phaseNumber = newPhaseNumber;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, PhasesPackage.PHASE__PHASE_NUMBER, oldPhaseNumber, phaseNumber));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public PhaseType getPhaseType()
+  {
+    return phaseType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetPhaseType(PhaseType newPhaseType, NotificationChain msgs)
+  {
+    PhaseType oldPhaseType = phaseType;
+    phaseType = newPhaseType;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PhasesPackage.PHASE__PHASE_TYPE, oldPhaseType, newPhaseType);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setPhaseType(PhaseType newPhaseType)
+  {
+    if (newPhaseType != phaseType)
+    {
+      NotificationChain msgs = null;
+      if (phaseType != null)
+        msgs = ((InternalEObject)phaseType).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PhasesPackage.PHASE__PHASE_TYPE, null, msgs);
+      if (newPhaseType != null)
+        msgs = ((InternalEObject)newPhaseType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PhasesPackage.PHASE__PHASE_TYPE, null, msgs);
+      msgs = basicSetPhaseType(newPhaseType, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, PhasesPackage.PHASE__PHASE_TYPE, newPhaseType, newPhaseType));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case PhasesPackage.PHASE__PHASE_TYPE:
+        return basicSetPhaseType(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Object eGet(int featureID, boolean resolve, boolean coreType)
+  {
+    switch (featureID)
+    {
+      case PhasesPackage.PHASE__PHASE_NUMBER:
+        return getPhaseNumber();
+      case PhasesPackage.PHASE__PHASE_TYPE:
+        return getPhaseType();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void eSet(int featureID, Object newValue)
+  {
+    switch (featureID)
+    {
+      case PhasesPackage.PHASE__PHASE_NUMBER:
+        setPhaseNumber((Integer)newValue);
+        return;
+      case PhasesPackage.PHASE__PHASE_TYPE:
+        setPhaseType((PhaseType)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void eUnset(int featureID)
+  {
+    switch (featureID)
+    {
+      case PhasesPackage.PHASE__PHASE_NUMBER:
+        setPhaseNumber(PHASE_NUMBER_EDEFAULT);
+        return;
+      case PhasesPackage.PHASE__PHASE_TYPE:
+        setPhaseType((PhaseType)null);
+        return;
+    }
+    super.eUnset(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean eIsSet(int featureID)
+  {
+    switch (featureID)
+    {
+      case PhasesPackage.PHASE__PHASE_NUMBER:
+        return phaseNumber != PHASE_NUMBER_EDEFAULT;
+      case PhasesPackage.PHASE__PHASE_TYPE:
+        return phaseType != null;
+    }
+    return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (phaseNumber: ");
+    result.append(phaseNumber);
+    result.append(')');
+    return result.toString();
   }
 
 } //PhaseImpl

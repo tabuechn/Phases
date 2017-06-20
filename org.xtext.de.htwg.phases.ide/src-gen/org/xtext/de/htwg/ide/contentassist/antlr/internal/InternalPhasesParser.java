@@ -107,49 +107,31 @@ public class InternalPhasesParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleGame"
-    // InternalPhases.g:62:1: ruleGame : ( ( rule__Game__PhasesAssignment )* ) ;
+    // InternalPhases.g:62:1: ruleGame : ( ( rule__Game__Group__0 ) ) ;
     public final void ruleGame() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPhases.g:66:2: ( ( ( rule__Game__PhasesAssignment )* ) )
-            // InternalPhases.g:67:2: ( ( rule__Game__PhasesAssignment )* )
+            // InternalPhases.g:66:2: ( ( ( rule__Game__Group__0 ) ) )
+            // InternalPhases.g:67:2: ( ( rule__Game__Group__0 ) )
             {
-            // InternalPhases.g:67:2: ( ( rule__Game__PhasesAssignment )* )
-            // InternalPhases.g:68:3: ( rule__Game__PhasesAssignment )*
+            // InternalPhases.g:67:2: ( ( rule__Game__Group__0 ) )
+            // InternalPhases.g:68:3: ( rule__Game__Group__0 )
             {
-             before(grammarAccess.getGameAccess().getPhasesAssignment()); 
-            // InternalPhases.g:69:3: ( rule__Game__PhasesAssignment )*
-            loop1:
-            do {
-                int alt1=2;
-                int LA1_0 = input.LA(1);
+             before(grammarAccess.getGameAccess().getGroup()); 
+            // InternalPhases.g:69:3: ( rule__Game__Group__0 )
+            // InternalPhases.g:69:4: rule__Game__Group__0
+            {
+            pushFollow(FOLLOW_2);
+            rule__Game__Group__0();
 
-                if ( (LA1_0==14) ) {
-                    alt1=1;
-                }
+            state._fsp--;
 
 
-                switch (alt1) {
-            	case 1 :
-            	    // InternalPhases.g:69:4: rule__Game__PhasesAssignment
-            	    {
-            	    pushFollow(FOLLOW_3);
-            	    rule__Game__PhasesAssignment();
+            }
 
-            	    state._fsp--;
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop1;
-                }
-            } while (true);
-
-             after(grammarAccess.getGameAccess().getPhasesAssignment()); 
+             after(grammarAccess.getGameAccess().getGroup()); 
 
             }
 
@@ -641,31 +623,31 @@ public class InternalPhasesParser extends AbstractInternalContentAssistParser {
         	
         try {
             // InternalPhases.g:231:1: ( ( ( rule__PhaseType__StreetTypeAssignment_0 ) ) | ( ( rule__PhaseType__NumbersTypeAssignment_1 ) ) | ( ( rule__PhaseType__ColorTypeAssignment_2 ) ) )
-            int alt2=3;
+            int alt1=3;
             switch ( input.LA(1) ) {
             case 18:
                 {
-                alt2=1;
+                alt1=1;
                 }
                 break;
             case 16:
                 {
-                alt2=2;
+                alt1=2;
                 }
                 break;
             case 17:
                 {
-                alt2=3;
+                alt1=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 2, 0, input);
+                    new NoViableAltException("", 1, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt2) {
+            switch (alt1) {
                 case 1 :
                     // InternalPhases.g:232:2: ( ( rule__PhaseType__StreetTypeAssignment_0 ) )
                     {
@@ -766,31 +748,31 @@ public class InternalPhasesParser extends AbstractInternalContentAssistParser {
         	
         try {
             // InternalPhases.g:258:1: ( ( 'DOUBLE' ) | ( 'TRIPLE' ) | ( 'QUADRUPLE' ) )
-            int alt3=3;
+            int alt2=3;
             switch ( input.LA(1) ) {
             case 11:
                 {
-                alt3=1;
+                alt2=1;
                 }
                 break;
             case 12:
                 {
-                alt3=2;
+                alt2=2;
                 }
                 break;
             case 13:
                 {
-                alt3=3;
+                alt2=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 3, 0, input);
+                    new NoViableAltException("", 2, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt3) {
+            switch (alt2) {
                 case 1 :
                     // InternalPhases.g:259:2: ( 'DOUBLE' )
                     {
@@ -853,15 +835,435 @@ public class InternalPhasesParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__NUMBERS__Alternatives"
 
 
+    // $ANTLR start "rule__Game__Group__0"
+    // InternalPhases.g:281:1: rule__Game__Group__0 : rule__Game__Group__0__Impl rule__Game__Group__1 ;
+    public final void rule__Game__Group__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalPhases.g:285:1: ( rule__Game__Group__0__Impl rule__Game__Group__1 )
+            // InternalPhases.g:286:2: rule__Game__Group__0__Impl rule__Game__Group__1
+            {
+            pushFollow(FOLLOW_3);
+            rule__Game__Group__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Game__Group__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Game__Group__0"
+
+
+    // $ANTLR start "rule__Game__Group__0__Impl"
+    // InternalPhases.g:293:1: rule__Game__Group__0__Impl : ( ( rule__Game__Phase1Assignment_0 ) ) ;
+    public final void rule__Game__Group__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalPhases.g:297:1: ( ( ( rule__Game__Phase1Assignment_0 ) ) )
+            // InternalPhases.g:298:1: ( ( rule__Game__Phase1Assignment_0 ) )
+            {
+            // InternalPhases.g:298:1: ( ( rule__Game__Phase1Assignment_0 ) )
+            // InternalPhases.g:299:2: ( rule__Game__Phase1Assignment_0 )
+            {
+             before(grammarAccess.getGameAccess().getPhase1Assignment_0()); 
+            // InternalPhases.g:300:2: ( rule__Game__Phase1Assignment_0 )
+            // InternalPhases.g:300:3: rule__Game__Phase1Assignment_0
+            {
+            pushFollow(FOLLOW_2);
+            rule__Game__Phase1Assignment_0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getGameAccess().getPhase1Assignment_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Game__Group__0__Impl"
+
+
+    // $ANTLR start "rule__Game__Group__1"
+    // InternalPhases.g:308:1: rule__Game__Group__1 : rule__Game__Group__1__Impl rule__Game__Group__2 ;
+    public final void rule__Game__Group__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalPhases.g:312:1: ( rule__Game__Group__1__Impl rule__Game__Group__2 )
+            // InternalPhases.g:313:2: rule__Game__Group__1__Impl rule__Game__Group__2
+            {
+            pushFollow(FOLLOW_3);
+            rule__Game__Group__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Game__Group__2();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Game__Group__1"
+
+
+    // $ANTLR start "rule__Game__Group__1__Impl"
+    // InternalPhases.g:320:1: rule__Game__Group__1__Impl : ( ( rule__Game__Phase2Assignment_1 ) ) ;
+    public final void rule__Game__Group__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalPhases.g:324:1: ( ( ( rule__Game__Phase2Assignment_1 ) ) )
+            // InternalPhases.g:325:1: ( ( rule__Game__Phase2Assignment_1 ) )
+            {
+            // InternalPhases.g:325:1: ( ( rule__Game__Phase2Assignment_1 ) )
+            // InternalPhases.g:326:2: ( rule__Game__Phase2Assignment_1 )
+            {
+             before(grammarAccess.getGameAccess().getPhase2Assignment_1()); 
+            // InternalPhases.g:327:2: ( rule__Game__Phase2Assignment_1 )
+            // InternalPhases.g:327:3: rule__Game__Phase2Assignment_1
+            {
+            pushFollow(FOLLOW_2);
+            rule__Game__Phase2Assignment_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getGameAccess().getPhase2Assignment_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Game__Group__1__Impl"
+
+
+    // $ANTLR start "rule__Game__Group__2"
+    // InternalPhases.g:335:1: rule__Game__Group__2 : rule__Game__Group__2__Impl rule__Game__Group__3 ;
+    public final void rule__Game__Group__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalPhases.g:339:1: ( rule__Game__Group__2__Impl rule__Game__Group__3 )
+            // InternalPhases.g:340:2: rule__Game__Group__2__Impl rule__Game__Group__3
+            {
+            pushFollow(FOLLOW_3);
+            rule__Game__Group__2__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Game__Group__3();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Game__Group__2"
+
+
+    // $ANTLR start "rule__Game__Group__2__Impl"
+    // InternalPhases.g:347:1: rule__Game__Group__2__Impl : ( ( rule__Game__Phase3Assignment_2 ) ) ;
+    public final void rule__Game__Group__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalPhases.g:351:1: ( ( ( rule__Game__Phase3Assignment_2 ) ) )
+            // InternalPhases.g:352:1: ( ( rule__Game__Phase3Assignment_2 ) )
+            {
+            // InternalPhases.g:352:1: ( ( rule__Game__Phase3Assignment_2 ) )
+            // InternalPhases.g:353:2: ( rule__Game__Phase3Assignment_2 )
+            {
+             before(grammarAccess.getGameAccess().getPhase3Assignment_2()); 
+            // InternalPhases.g:354:2: ( rule__Game__Phase3Assignment_2 )
+            // InternalPhases.g:354:3: rule__Game__Phase3Assignment_2
+            {
+            pushFollow(FOLLOW_2);
+            rule__Game__Phase3Assignment_2();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getGameAccess().getPhase3Assignment_2()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Game__Group__2__Impl"
+
+
+    // $ANTLR start "rule__Game__Group__3"
+    // InternalPhases.g:362:1: rule__Game__Group__3 : rule__Game__Group__3__Impl rule__Game__Group__4 ;
+    public final void rule__Game__Group__3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalPhases.g:366:1: ( rule__Game__Group__3__Impl rule__Game__Group__4 )
+            // InternalPhases.g:367:2: rule__Game__Group__3__Impl rule__Game__Group__4
+            {
+            pushFollow(FOLLOW_3);
+            rule__Game__Group__3__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Game__Group__4();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Game__Group__3"
+
+
+    // $ANTLR start "rule__Game__Group__3__Impl"
+    // InternalPhases.g:374:1: rule__Game__Group__3__Impl : ( ( rule__Game__Phase4Assignment_3 ) ) ;
+    public final void rule__Game__Group__3__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalPhases.g:378:1: ( ( ( rule__Game__Phase4Assignment_3 ) ) )
+            // InternalPhases.g:379:1: ( ( rule__Game__Phase4Assignment_3 ) )
+            {
+            // InternalPhases.g:379:1: ( ( rule__Game__Phase4Assignment_3 ) )
+            // InternalPhases.g:380:2: ( rule__Game__Phase4Assignment_3 )
+            {
+             before(grammarAccess.getGameAccess().getPhase4Assignment_3()); 
+            // InternalPhases.g:381:2: ( rule__Game__Phase4Assignment_3 )
+            // InternalPhases.g:381:3: rule__Game__Phase4Assignment_3
+            {
+            pushFollow(FOLLOW_2);
+            rule__Game__Phase4Assignment_3();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getGameAccess().getPhase4Assignment_3()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Game__Group__3__Impl"
+
+
+    // $ANTLR start "rule__Game__Group__4"
+    // InternalPhases.g:389:1: rule__Game__Group__4 : rule__Game__Group__4__Impl ;
+    public final void rule__Game__Group__4() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalPhases.g:393:1: ( rule__Game__Group__4__Impl )
+            // InternalPhases.g:394:2: rule__Game__Group__4__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__Game__Group__4__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Game__Group__4"
+
+
+    // $ANTLR start "rule__Game__Group__4__Impl"
+    // InternalPhases.g:400:1: rule__Game__Group__4__Impl : ( ( rule__Game__Phase5Assignment_4 ) ) ;
+    public final void rule__Game__Group__4__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalPhases.g:404:1: ( ( ( rule__Game__Phase5Assignment_4 ) ) )
+            // InternalPhases.g:405:1: ( ( rule__Game__Phase5Assignment_4 ) )
+            {
+            // InternalPhases.g:405:1: ( ( rule__Game__Phase5Assignment_4 ) )
+            // InternalPhases.g:406:2: ( rule__Game__Phase5Assignment_4 )
+            {
+             before(grammarAccess.getGameAccess().getPhase5Assignment_4()); 
+            // InternalPhases.g:407:2: ( rule__Game__Phase5Assignment_4 )
+            // InternalPhases.g:407:3: rule__Game__Phase5Assignment_4
+            {
+            pushFollow(FOLLOW_2);
+            rule__Game__Phase5Assignment_4();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getGameAccess().getPhase5Assignment_4()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Game__Group__4__Impl"
+
+
     // $ANTLR start "rule__Phase__Group__0"
-    // InternalPhases.g:281:1: rule__Phase__Group__0 : rule__Phase__Group__0__Impl rule__Phase__Group__1 ;
+    // InternalPhases.g:416:1: rule__Phase__Group__0 : rule__Phase__Group__0__Impl rule__Phase__Group__1 ;
     public final void rule__Phase__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPhases.g:285:1: ( rule__Phase__Group__0__Impl rule__Phase__Group__1 )
-            // InternalPhases.g:286:2: rule__Phase__Group__0__Impl rule__Phase__Group__1
+            // InternalPhases.g:420:1: ( rule__Phase__Group__0__Impl rule__Phase__Group__1 )
+            // InternalPhases.g:421:2: rule__Phase__Group__0__Impl rule__Phase__Group__1
             {
             pushFollow(FOLLOW_4);
             rule__Phase__Group__0__Impl();
@@ -892,17 +1294,17 @@ public class InternalPhasesParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Phase__Group__0__Impl"
-    // InternalPhases.g:293:1: rule__Phase__Group__0__Impl : ( 'PHASE' ) ;
+    // InternalPhases.g:428:1: rule__Phase__Group__0__Impl : ( 'PHASE' ) ;
     public final void rule__Phase__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPhases.g:297:1: ( ( 'PHASE' ) )
-            // InternalPhases.g:298:1: ( 'PHASE' )
+            // InternalPhases.g:432:1: ( ( 'PHASE' ) )
+            // InternalPhases.g:433:1: ( 'PHASE' )
             {
-            // InternalPhases.g:298:1: ( 'PHASE' )
-            // InternalPhases.g:299:2: 'PHASE'
+            // InternalPhases.g:433:1: ( 'PHASE' )
+            // InternalPhases.g:434:2: 'PHASE'
             {
              before(grammarAccess.getPhaseAccess().getPHASEKeyword_0()); 
             match(input,14,FOLLOW_2); 
@@ -929,17 +1331,22 @@ public class InternalPhasesParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Phase__Group__1"
-    // InternalPhases.g:308:1: rule__Phase__Group__1 : rule__Phase__Group__1__Impl ;
+    // InternalPhases.g:443:1: rule__Phase__Group__1 : rule__Phase__Group__1__Impl rule__Phase__Group__2 ;
     public final void rule__Phase__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPhases.g:312:1: ( rule__Phase__Group__1__Impl )
-            // InternalPhases.g:313:2: rule__Phase__Group__1__Impl
+            // InternalPhases.g:447:1: ( rule__Phase__Group__1__Impl rule__Phase__Group__2 )
+            // InternalPhases.g:448:2: rule__Phase__Group__1__Impl rule__Phase__Group__2
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_5);
             rule__Phase__Group__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Phase__Group__2();
 
             state._fsp--;
 
@@ -962,25 +1369,31 @@ public class InternalPhasesParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Phase__Group__1__Impl"
-    // InternalPhases.g:319:1: rule__Phase__Group__1__Impl : ( rulePhaseType ) ;
+    // InternalPhases.g:455:1: rule__Phase__Group__1__Impl : ( ( rule__Phase__PhaseNumberAssignment_1 ) ) ;
     public final void rule__Phase__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPhases.g:323:1: ( ( rulePhaseType ) )
-            // InternalPhases.g:324:1: ( rulePhaseType )
+            // InternalPhases.g:459:1: ( ( ( rule__Phase__PhaseNumberAssignment_1 ) ) )
+            // InternalPhases.g:460:1: ( ( rule__Phase__PhaseNumberAssignment_1 ) )
             {
-            // InternalPhases.g:324:1: ( rulePhaseType )
-            // InternalPhases.g:325:2: rulePhaseType
+            // InternalPhases.g:460:1: ( ( rule__Phase__PhaseNumberAssignment_1 ) )
+            // InternalPhases.g:461:2: ( rule__Phase__PhaseNumberAssignment_1 )
             {
-             before(grammarAccess.getPhaseAccess().getPhaseTypeParserRuleCall_1()); 
+             before(grammarAccess.getPhaseAccess().getPhaseNumberAssignment_1()); 
+            // InternalPhases.g:462:2: ( rule__Phase__PhaseNumberAssignment_1 )
+            // InternalPhases.g:462:3: rule__Phase__PhaseNumberAssignment_1
+            {
             pushFollow(FOLLOW_2);
-            rulePhaseType();
+            rule__Phase__PhaseNumberAssignment_1();
 
             state._fsp--;
 
-             after(grammarAccess.getPhaseAccess().getPhaseTypeParserRuleCall_1()); 
+
+            }
+
+             after(grammarAccess.getPhaseAccess().getPhaseNumberAssignment_1()); 
 
             }
 
@@ -1002,17 +1415,97 @@ public class InternalPhasesParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Phase__Group__1__Impl"
 
 
+    // $ANTLR start "rule__Phase__Group__2"
+    // InternalPhases.g:470:1: rule__Phase__Group__2 : rule__Phase__Group__2__Impl ;
+    public final void rule__Phase__Group__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalPhases.g:474:1: ( rule__Phase__Group__2__Impl )
+            // InternalPhases.g:475:2: rule__Phase__Group__2__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__Phase__Group__2__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Phase__Group__2"
+
+
+    // $ANTLR start "rule__Phase__Group__2__Impl"
+    // InternalPhases.g:481:1: rule__Phase__Group__2__Impl : ( ( rule__Phase__PhaseTypeAssignment_2 ) ) ;
+    public final void rule__Phase__Group__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalPhases.g:485:1: ( ( ( rule__Phase__PhaseTypeAssignment_2 ) ) )
+            // InternalPhases.g:486:1: ( ( rule__Phase__PhaseTypeAssignment_2 ) )
+            {
+            // InternalPhases.g:486:1: ( ( rule__Phase__PhaseTypeAssignment_2 ) )
+            // InternalPhases.g:487:2: ( rule__Phase__PhaseTypeAssignment_2 )
+            {
+             before(grammarAccess.getPhaseAccess().getPhaseTypeAssignment_2()); 
+            // InternalPhases.g:488:2: ( rule__Phase__PhaseTypeAssignment_2 )
+            // InternalPhases.g:488:3: rule__Phase__PhaseTypeAssignment_2
+            {
+            pushFollow(FOLLOW_2);
+            rule__Phase__PhaseTypeAssignment_2();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getPhaseAccess().getPhaseTypeAssignment_2()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Phase__Group__2__Impl"
+
+
     // $ANTLR start "rule__NUMBERS_TYPE__Group__0"
-    // InternalPhases.g:335:1: rule__NUMBERS_TYPE__Group__0 : rule__NUMBERS_TYPE__Group__0__Impl rule__NUMBERS_TYPE__Group__1 ;
+    // InternalPhases.g:497:1: rule__NUMBERS_TYPE__Group__0 : rule__NUMBERS_TYPE__Group__0__Impl rule__NUMBERS_TYPE__Group__1 ;
     public final void rule__NUMBERS_TYPE__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPhases.g:339:1: ( rule__NUMBERS_TYPE__Group__0__Impl rule__NUMBERS_TYPE__Group__1 )
-            // InternalPhases.g:340:2: rule__NUMBERS_TYPE__Group__0__Impl rule__NUMBERS_TYPE__Group__1
+            // InternalPhases.g:501:1: ( rule__NUMBERS_TYPE__Group__0__Impl rule__NUMBERS_TYPE__Group__1 )
+            // InternalPhases.g:502:2: rule__NUMBERS_TYPE__Group__0__Impl rule__NUMBERS_TYPE__Group__1
             {
-            pushFollow(FOLLOW_5);
+            pushFollow(FOLLOW_6);
             rule__NUMBERS_TYPE__Group__0__Impl();
 
             state._fsp--;
@@ -1041,21 +1534,21 @@ public class InternalPhasesParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NUMBERS_TYPE__Group__0__Impl"
-    // InternalPhases.g:347:1: rule__NUMBERS_TYPE__Group__0__Impl : ( ( rule__NUMBERS_TYPE__NameAssignment_0 ) ) ;
+    // InternalPhases.g:509:1: rule__NUMBERS_TYPE__Group__0__Impl : ( ( rule__NUMBERS_TYPE__NameAssignment_0 ) ) ;
     public final void rule__NUMBERS_TYPE__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPhases.g:351:1: ( ( ( rule__NUMBERS_TYPE__NameAssignment_0 ) ) )
-            // InternalPhases.g:352:1: ( ( rule__NUMBERS_TYPE__NameAssignment_0 ) )
+            // InternalPhases.g:513:1: ( ( ( rule__NUMBERS_TYPE__NameAssignment_0 ) ) )
+            // InternalPhases.g:514:1: ( ( rule__NUMBERS_TYPE__NameAssignment_0 ) )
             {
-            // InternalPhases.g:352:1: ( ( rule__NUMBERS_TYPE__NameAssignment_0 ) )
-            // InternalPhases.g:353:2: ( rule__NUMBERS_TYPE__NameAssignment_0 )
+            // InternalPhases.g:514:1: ( ( rule__NUMBERS_TYPE__NameAssignment_0 ) )
+            // InternalPhases.g:515:2: ( rule__NUMBERS_TYPE__NameAssignment_0 )
             {
              before(grammarAccess.getNUMBERS_TYPEAccess().getNameAssignment_0()); 
-            // InternalPhases.g:354:2: ( rule__NUMBERS_TYPE__NameAssignment_0 )
-            // InternalPhases.g:354:3: rule__NUMBERS_TYPE__NameAssignment_0
+            // InternalPhases.g:516:2: ( rule__NUMBERS_TYPE__NameAssignment_0 )
+            // InternalPhases.g:516:3: rule__NUMBERS_TYPE__NameAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__NUMBERS_TYPE__NameAssignment_0();
@@ -1088,16 +1581,16 @@ public class InternalPhasesParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NUMBERS_TYPE__Group__1"
-    // InternalPhases.g:362:1: rule__NUMBERS_TYPE__Group__1 : rule__NUMBERS_TYPE__Group__1__Impl rule__NUMBERS_TYPE__Group__2 ;
+    // InternalPhases.g:524:1: rule__NUMBERS_TYPE__Group__1 : rule__NUMBERS_TYPE__Group__1__Impl rule__NUMBERS_TYPE__Group__2 ;
     public final void rule__NUMBERS_TYPE__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPhases.g:366:1: ( rule__NUMBERS_TYPE__Group__1__Impl rule__NUMBERS_TYPE__Group__2 )
-            // InternalPhases.g:367:2: rule__NUMBERS_TYPE__Group__1__Impl rule__NUMBERS_TYPE__Group__2
+            // InternalPhases.g:528:1: ( rule__NUMBERS_TYPE__Group__1__Impl rule__NUMBERS_TYPE__Group__2 )
+            // InternalPhases.g:529:2: rule__NUMBERS_TYPE__Group__1__Impl rule__NUMBERS_TYPE__Group__2
             {
-            pushFollow(FOLLOW_6);
+            pushFollow(FOLLOW_7);
             rule__NUMBERS_TYPE__Group__1__Impl();
 
             state._fsp--;
@@ -1126,17 +1619,17 @@ public class InternalPhasesParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NUMBERS_TYPE__Group__1__Impl"
-    // InternalPhases.g:374:1: rule__NUMBERS_TYPE__Group__1__Impl : ( ':' ) ;
+    // InternalPhases.g:536:1: rule__NUMBERS_TYPE__Group__1__Impl : ( ':' ) ;
     public final void rule__NUMBERS_TYPE__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPhases.g:378:1: ( ( ':' ) )
-            // InternalPhases.g:379:1: ( ':' )
+            // InternalPhases.g:540:1: ( ( ':' ) )
+            // InternalPhases.g:541:1: ( ':' )
             {
-            // InternalPhases.g:379:1: ( ':' )
-            // InternalPhases.g:380:2: ':'
+            // InternalPhases.g:541:1: ( ':' )
+            // InternalPhases.g:542:2: ':'
             {
              before(grammarAccess.getNUMBERS_TYPEAccess().getColonKeyword_1()); 
             match(input,15,FOLLOW_2); 
@@ -1163,14 +1656,14 @@ public class InternalPhasesParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NUMBERS_TYPE__Group__2"
-    // InternalPhases.g:389:1: rule__NUMBERS_TYPE__Group__2 : rule__NUMBERS_TYPE__Group__2__Impl ;
+    // InternalPhases.g:551:1: rule__NUMBERS_TYPE__Group__2 : rule__NUMBERS_TYPE__Group__2__Impl ;
     public final void rule__NUMBERS_TYPE__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPhases.g:393:1: ( rule__NUMBERS_TYPE__Group__2__Impl )
-            // InternalPhases.g:394:2: rule__NUMBERS_TYPE__Group__2__Impl
+            // InternalPhases.g:555:1: ( rule__NUMBERS_TYPE__Group__2__Impl )
+            // InternalPhases.g:556:2: rule__NUMBERS_TYPE__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__NUMBERS_TYPE__Group__2__Impl();
@@ -1196,29 +1689,47 @@ public class InternalPhasesParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NUMBERS_TYPE__Group__2__Impl"
-    // InternalPhases.g:400:1: rule__NUMBERS_TYPE__Group__2__Impl : ( ( rule__NUMBERS_TYPE__NumbersTypeAssignment_2 ) ) ;
+    // InternalPhases.g:562:1: rule__NUMBERS_TYPE__Group__2__Impl : ( ( rule__NUMBERS_TYPE__NumbersTypeAssignment_2 )* ) ;
     public final void rule__NUMBERS_TYPE__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPhases.g:404:1: ( ( ( rule__NUMBERS_TYPE__NumbersTypeAssignment_2 ) ) )
-            // InternalPhases.g:405:1: ( ( rule__NUMBERS_TYPE__NumbersTypeAssignment_2 ) )
+            // InternalPhases.g:566:1: ( ( ( rule__NUMBERS_TYPE__NumbersTypeAssignment_2 )* ) )
+            // InternalPhases.g:567:1: ( ( rule__NUMBERS_TYPE__NumbersTypeAssignment_2 )* )
             {
-            // InternalPhases.g:405:1: ( ( rule__NUMBERS_TYPE__NumbersTypeAssignment_2 ) )
-            // InternalPhases.g:406:2: ( rule__NUMBERS_TYPE__NumbersTypeAssignment_2 )
+            // InternalPhases.g:567:1: ( ( rule__NUMBERS_TYPE__NumbersTypeAssignment_2 )* )
+            // InternalPhases.g:568:2: ( rule__NUMBERS_TYPE__NumbersTypeAssignment_2 )*
             {
              before(grammarAccess.getNUMBERS_TYPEAccess().getNumbersTypeAssignment_2()); 
-            // InternalPhases.g:407:2: ( rule__NUMBERS_TYPE__NumbersTypeAssignment_2 )
-            // InternalPhases.g:407:3: rule__NUMBERS_TYPE__NumbersTypeAssignment_2
-            {
-            pushFollow(FOLLOW_2);
-            rule__NUMBERS_TYPE__NumbersTypeAssignment_2();
+            // InternalPhases.g:569:2: ( rule__NUMBERS_TYPE__NumbersTypeAssignment_2 )*
+            loop3:
+            do {
+                int alt3=2;
+                int LA3_0 = input.LA(1);
 
-            state._fsp--;
+                if ( ((LA3_0>=11 && LA3_0<=13)) ) {
+                    alt3=1;
+                }
 
 
-            }
+                switch (alt3) {
+            	case 1 :
+            	    // InternalPhases.g:569:3: rule__NUMBERS_TYPE__NumbersTypeAssignment_2
+            	    {
+            	    pushFollow(FOLLOW_8);
+            	    rule__NUMBERS_TYPE__NumbersTypeAssignment_2();
+
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop3;
+                }
+            } while (true);
 
              after(grammarAccess.getNUMBERS_TYPEAccess().getNumbersTypeAssignment_2()); 
 
@@ -1243,16 +1754,16 @@ public class InternalPhasesParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__COLORS_TYPE__Group__0"
-    // InternalPhases.g:416:1: rule__COLORS_TYPE__Group__0 : rule__COLORS_TYPE__Group__0__Impl rule__COLORS_TYPE__Group__1 ;
+    // InternalPhases.g:578:1: rule__COLORS_TYPE__Group__0 : rule__COLORS_TYPE__Group__0__Impl rule__COLORS_TYPE__Group__1 ;
     public final void rule__COLORS_TYPE__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPhases.g:420:1: ( rule__COLORS_TYPE__Group__0__Impl rule__COLORS_TYPE__Group__1 )
-            // InternalPhases.g:421:2: rule__COLORS_TYPE__Group__0__Impl rule__COLORS_TYPE__Group__1
+            // InternalPhases.g:582:1: ( rule__COLORS_TYPE__Group__0__Impl rule__COLORS_TYPE__Group__1 )
+            // InternalPhases.g:583:2: rule__COLORS_TYPE__Group__0__Impl rule__COLORS_TYPE__Group__1
             {
-            pushFollow(FOLLOW_5);
+            pushFollow(FOLLOW_6);
             rule__COLORS_TYPE__Group__0__Impl();
 
             state._fsp--;
@@ -1281,21 +1792,21 @@ public class InternalPhasesParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__COLORS_TYPE__Group__0__Impl"
-    // InternalPhases.g:428:1: rule__COLORS_TYPE__Group__0__Impl : ( ( rule__COLORS_TYPE__NameAssignment_0 ) ) ;
+    // InternalPhases.g:590:1: rule__COLORS_TYPE__Group__0__Impl : ( ( rule__COLORS_TYPE__NameAssignment_0 ) ) ;
     public final void rule__COLORS_TYPE__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPhases.g:432:1: ( ( ( rule__COLORS_TYPE__NameAssignment_0 ) ) )
-            // InternalPhases.g:433:1: ( ( rule__COLORS_TYPE__NameAssignment_0 ) )
+            // InternalPhases.g:594:1: ( ( ( rule__COLORS_TYPE__NameAssignment_0 ) ) )
+            // InternalPhases.g:595:1: ( ( rule__COLORS_TYPE__NameAssignment_0 ) )
             {
-            // InternalPhases.g:433:1: ( ( rule__COLORS_TYPE__NameAssignment_0 ) )
-            // InternalPhases.g:434:2: ( rule__COLORS_TYPE__NameAssignment_0 )
+            // InternalPhases.g:595:1: ( ( rule__COLORS_TYPE__NameAssignment_0 ) )
+            // InternalPhases.g:596:2: ( rule__COLORS_TYPE__NameAssignment_0 )
             {
              before(grammarAccess.getCOLORS_TYPEAccess().getNameAssignment_0()); 
-            // InternalPhases.g:435:2: ( rule__COLORS_TYPE__NameAssignment_0 )
-            // InternalPhases.g:435:3: rule__COLORS_TYPE__NameAssignment_0
+            // InternalPhases.g:597:2: ( rule__COLORS_TYPE__NameAssignment_0 )
+            // InternalPhases.g:597:3: rule__COLORS_TYPE__NameAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__COLORS_TYPE__NameAssignment_0();
@@ -1328,16 +1839,16 @@ public class InternalPhasesParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__COLORS_TYPE__Group__1"
-    // InternalPhases.g:443:1: rule__COLORS_TYPE__Group__1 : rule__COLORS_TYPE__Group__1__Impl rule__COLORS_TYPE__Group__2 ;
+    // InternalPhases.g:605:1: rule__COLORS_TYPE__Group__1 : rule__COLORS_TYPE__Group__1__Impl rule__COLORS_TYPE__Group__2 ;
     public final void rule__COLORS_TYPE__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPhases.g:447:1: ( rule__COLORS_TYPE__Group__1__Impl rule__COLORS_TYPE__Group__2 )
-            // InternalPhases.g:448:2: rule__COLORS_TYPE__Group__1__Impl rule__COLORS_TYPE__Group__2
+            // InternalPhases.g:609:1: ( rule__COLORS_TYPE__Group__1__Impl rule__COLORS_TYPE__Group__2 )
+            // InternalPhases.g:610:2: rule__COLORS_TYPE__Group__1__Impl rule__COLORS_TYPE__Group__2
             {
-            pushFollow(FOLLOW_7);
+            pushFollow(FOLLOW_4);
             rule__COLORS_TYPE__Group__1__Impl();
 
             state._fsp--;
@@ -1366,17 +1877,17 @@ public class InternalPhasesParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__COLORS_TYPE__Group__1__Impl"
-    // InternalPhases.g:455:1: rule__COLORS_TYPE__Group__1__Impl : ( ':' ) ;
+    // InternalPhases.g:617:1: rule__COLORS_TYPE__Group__1__Impl : ( ':' ) ;
     public final void rule__COLORS_TYPE__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPhases.g:459:1: ( ( ':' ) )
-            // InternalPhases.g:460:1: ( ':' )
+            // InternalPhases.g:621:1: ( ( ':' ) )
+            // InternalPhases.g:622:1: ( ':' )
             {
-            // InternalPhases.g:460:1: ( ':' )
-            // InternalPhases.g:461:2: ':'
+            // InternalPhases.g:622:1: ( ':' )
+            // InternalPhases.g:623:2: ':'
             {
              before(grammarAccess.getCOLORS_TYPEAccess().getColonKeyword_1()); 
             match(input,15,FOLLOW_2); 
@@ -1403,14 +1914,14 @@ public class InternalPhasesParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__COLORS_TYPE__Group__2"
-    // InternalPhases.g:470:1: rule__COLORS_TYPE__Group__2 : rule__COLORS_TYPE__Group__2__Impl ;
+    // InternalPhases.g:632:1: rule__COLORS_TYPE__Group__2 : rule__COLORS_TYPE__Group__2__Impl ;
     public final void rule__COLORS_TYPE__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPhases.g:474:1: ( rule__COLORS_TYPE__Group__2__Impl )
-            // InternalPhases.g:475:2: rule__COLORS_TYPE__Group__2__Impl
+            // InternalPhases.g:636:1: ( rule__COLORS_TYPE__Group__2__Impl )
+            // InternalPhases.g:637:2: rule__COLORS_TYPE__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__COLORS_TYPE__Group__2__Impl();
@@ -1436,21 +1947,21 @@ public class InternalPhasesParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__COLORS_TYPE__Group__2__Impl"
-    // InternalPhases.g:481:1: rule__COLORS_TYPE__Group__2__Impl : ( ( rule__COLORS_TYPE__NumberColorsAssignment_2 ) ) ;
+    // InternalPhases.g:643:1: rule__COLORS_TYPE__Group__2__Impl : ( ( rule__COLORS_TYPE__NumberColorsAssignment_2 ) ) ;
     public final void rule__COLORS_TYPE__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPhases.g:485:1: ( ( ( rule__COLORS_TYPE__NumberColorsAssignment_2 ) ) )
-            // InternalPhases.g:486:1: ( ( rule__COLORS_TYPE__NumberColorsAssignment_2 ) )
+            // InternalPhases.g:647:1: ( ( ( rule__COLORS_TYPE__NumberColorsAssignment_2 ) ) )
+            // InternalPhases.g:648:1: ( ( rule__COLORS_TYPE__NumberColorsAssignment_2 ) )
             {
-            // InternalPhases.g:486:1: ( ( rule__COLORS_TYPE__NumberColorsAssignment_2 ) )
-            // InternalPhases.g:487:2: ( rule__COLORS_TYPE__NumberColorsAssignment_2 )
+            // InternalPhases.g:648:1: ( ( rule__COLORS_TYPE__NumberColorsAssignment_2 ) )
+            // InternalPhases.g:649:2: ( rule__COLORS_TYPE__NumberColorsAssignment_2 )
             {
              before(grammarAccess.getCOLORS_TYPEAccess().getNumberColorsAssignment_2()); 
-            // InternalPhases.g:488:2: ( rule__COLORS_TYPE__NumberColorsAssignment_2 )
-            // InternalPhases.g:488:3: rule__COLORS_TYPE__NumberColorsAssignment_2
+            // InternalPhases.g:650:2: ( rule__COLORS_TYPE__NumberColorsAssignment_2 )
+            // InternalPhases.g:650:3: rule__COLORS_TYPE__NumberColorsAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__COLORS_TYPE__NumberColorsAssignment_2();
@@ -1483,16 +1994,16 @@ public class InternalPhasesParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__STREET_TYPE__Group__0"
-    // InternalPhases.g:497:1: rule__STREET_TYPE__Group__0 : rule__STREET_TYPE__Group__0__Impl rule__STREET_TYPE__Group__1 ;
+    // InternalPhases.g:659:1: rule__STREET_TYPE__Group__0 : rule__STREET_TYPE__Group__0__Impl rule__STREET_TYPE__Group__1 ;
     public final void rule__STREET_TYPE__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPhases.g:501:1: ( rule__STREET_TYPE__Group__0__Impl rule__STREET_TYPE__Group__1 )
-            // InternalPhases.g:502:2: rule__STREET_TYPE__Group__0__Impl rule__STREET_TYPE__Group__1
+            // InternalPhases.g:663:1: ( rule__STREET_TYPE__Group__0__Impl rule__STREET_TYPE__Group__1 )
+            // InternalPhases.g:664:2: rule__STREET_TYPE__Group__0__Impl rule__STREET_TYPE__Group__1
             {
-            pushFollow(FOLLOW_5);
+            pushFollow(FOLLOW_6);
             rule__STREET_TYPE__Group__0__Impl();
 
             state._fsp--;
@@ -1521,21 +2032,21 @@ public class InternalPhasesParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__STREET_TYPE__Group__0__Impl"
-    // InternalPhases.g:509:1: rule__STREET_TYPE__Group__0__Impl : ( ( rule__STREET_TYPE__NameAssignment_0 ) ) ;
+    // InternalPhases.g:671:1: rule__STREET_TYPE__Group__0__Impl : ( ( rule__STREET_TYPE__NameAssignment_0 ) ) ;
     public final void rule__STREET_TYPE__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPhases.g:513:1: ( ( ( rule__STREET_TYPE__NameAssignment_0 ) ) )
-            // InternalPhases.g:514:1: ( ( rule__STREET_TYPE__NameAssignment_0 ) )
+            // InternalPhases.g:675:1: ( ( ( rule__STREET_TYPE__NameAssignment_0 ) ) )
+            // InternalPhases.g:676:1: ( ( rule__STREET_TYPE__NameAssignment_0 ) )
             {
-            // InternalPhases.g:514:1: ( ( rule__STREET_TYPE__NameAssignment_0 ) )
-            // InternalPhases.g:515:2: ( rule__STREET_TYPE__NameAssignment_0 )
+            // InternalPhases.g:676:1: ( ( rule__STREET_TYPE__NameAssignment_0 ) )
+            // InternalPhases.g:677:2: ( rule__STREET_TYPE__NameAssignment_0 )
             {
              before(grammarAccess.getSTREET_TYPEAccess().getNameAssignment_0()); 
-            // InternalPhases.g:516:2: ( rule__STREET_TYPE__NameAssignment_0 )
-            // InternalPhases.g:516:3: rule__STREET_TYPE__NameAssignment_0
+            // InternalPhases.g:678:2: ( rule__STREET_TYPE__NameAssignment_0 )
+            // InternalPhases.g:678:3: rule__STREET_TYPE__NameAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__STREET_TYPE__NameAssignment_0();
@@ -1568,16 +2079,16 @@ public class InternalPhasesParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__STREET_TYPE__Group__1"
-    // InternalPhases.g:524:1: rule__STREET_TYPE__Group__1 : rule__STREET_TYPE__Group__1__Impl rule__STREET_TYPE__Group__2 ;
+    // InternalPhases.g:686:1: rule__STREET_TYPE__Group__1 : rule__STREET_TYPE__Group__1__Impl rule__STREET_TYPE__Group__2 ;
     public final void rule__STREET_TYPE__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPhases.g:528:1: ( rule__STREET_TYPE__Group__1__Impl rule__STREET_TYPE__Group__2 )
-            // InternalPhases.g:529:2: rule__STREET_TYPE__Group__1__Impl rule__STREET_TYPE__Group__2
+            // InternalPhases.g:690:1: ( rule__STREET_TYPE__Group__1__Impl rule__STREET_TYPE__Group__2 )
+            // InternalPhases.g:691:2: rule__STREET_TYPE__Group__1__Impl rule__STREET_TYPE__Group__2
             {
-            pushFollow(FOLLOW_7);
+            pushFollow(FOLLOW_4);
             rule__STREET_TYPE__Group__1__Impl();
 
             state._fsp--;
@@ -1606,17 +2117,17 @@ public class InternalPhasesParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__STREET_TYPE__Group__1__Impl"
-    // InternalPhases.g:536:1: rule__STREET_TYPE__Group__1__Impl : ( ':' ) ;
+    // InternalPhases.g:698:1: rule__STREET_TYPE__Group__1__Impl : ( ':' ) ;
     public final void rule__STREET_TYPE__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPhases.g:540:1: ( ( ':' ) )
-            // InternalPhases.g:541:1: ( ':' )
+            // InternalPhases.g:702:1: ( ( ':' ) )
+            // InternalPhases.g:703:1: ( ':' )
             {
-            // InternalPhases.g:541:1: ( ':' )
-            // InternalPhases.g:542:2: ':'
+            // InternalPhases.g:703:1: ( ':' )
+            // InternalPhases.g:704:2: ':'
             {
              before(grammarAccess.getSTREET_TYPEAccess().getColonKeyword_1()); 
             match(input,15,FOLLOW_2); 
@@ -1643,14 +2154,14 @@ public class InternalPhasesParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__STREET_TYPE__Group__2"
-    // InternalPhases.g:551:1: rule__STREET_TYPE__Group__2 : rule__STREET_TYPE__Group__2__Impl ;
+    // InternalPhases.g:713:1: rule__STREET_TYPE__Group__2 : rule__STREET_TYPE__Group__2__Impl ;
     public final void rule__STREET_TYPE__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPhases.g:555:1: ( rule__STREET_TYPE__Group__2__Impl )
-            // InternalPhases.g:556:2: rule__STREET_TYPE__Group__2__Impl
+            // InternalPhases.g:717:1: ( rule__STREET_TYPE__Group__2__Impl )
+            // InternalPhases.g:718:2: rule__STREET_TYPE__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__STREET_TYPE__Group__2__Impl();
@@ -1676,21 +2187,21 @@ public class InternalPhasesParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__STREET_TYPE__Group__2__Impl"
-    // InternalPhases.g:562:1: rule__STREET_TYPE__Group__2__Impl : ( ( rule__STREET_TYPE__StreetLenghtAssignment_2 ) ) ;
+    // InternalPhases.g:724:1: rule__STREET_TYPE__Group__2__Impl : ( ( rule__STREET_TYPE__StreetLenghtAssignment_2 ) ) ;
     public final void rule__STREET_TYPE__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPhases.g:566:1: ( ( ( rule__STREET_TYPE__StreetLenghtAssignment_2 ) ) )
-            // InternalPhases.g:567:1: ( ( rule__STREET_TYPE__StreetLenghtAssignment_2 ) )
+            // InternalPhases.g:728:1: ( ( ( rule__STREET_TYPE__StreetLenghtAssignment_2 ) ) )
+            // InternalPhases.g:729:1: ( ( rule__STREET_TYPE__StreetLenghtAssignment_2 ) )
             {
-            // InternalPhases.g:567:1: ( ( rule__STREET_TYPE__StreetLenghtAssignment_2 ) )
-            // InternalPhases.g:568:2: ( rule__STREET_TYPE__StreetLenghtAssignment_2 )
+            // InternalPhases.g:729:1: ( ( rule__STREET_TYPE__StreetLenghtAssignment_2 ) )
+            // InternalPhases.g:730:2: ( rule__STREET_TYPE__StreetLenghtAssignment_2 )
             {
              before(grammarAccess.getSTREET_TYPEAccess().getStreetLenghtAssignment_2()); 
-            // InternalPhases.g:569:2: ( rule__STREET_TYPE__StreetLenghtAssignment_2 )
-            // InternalPhases.g:569:3: rule__STREET_TYPE__StreetLenghtAssignment_2
+            // InternalPhases.g:731:2: ( rule__STREET_TYPE__StreetLenghtAssignment_2 )
+            // InternalPhases.g:731:3: rule__STREET_TYPE__StreetLenghtAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__STREET_TYPE__StreetLenghtAssignment_2();
@@ -1722,26 +2233,26 @@ public class InternalPhasesParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__STREET_TYPE__Group__2__Impl"
 
 
-    // $ANTLR start "rule__Game__PhasesAssignment"
-    // InternalPhases.g:578:1: rule__Game__PhasesAssignment : ( rulePhase ) ;
-    public final void rule__Game__PhasesAssignment() throws RecognitionException {
+    // $ANTLR start "rule__Game__Phase1Assignment_0"
+    // InternalPhases.g:740:1: rule__Game__Phase1Assignment_0 : ( rulePhase ) ;
+    public final void rule__Game__Phase1Assignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPhases.g:582:1: ( ( rulePhase ) )
-            // InternalPhases.g:583:2: ( rulePhase )
+            // InternalPhases.g:744:1: ( ( rulePhase ) )
+            // InternalPhases.g:745:2: ( rulePhase )
             {
-            // InternalPhases.g:583:2: ( rulePhase )
-            // InternalPhases.g:584:3: rulePhase
+            // InternalPhases.g:745:2: ( rulePhase )
+            // InternalPhases.g:746:3: rulePhase
             {
-             before(grammarAccess.getGameAccess().getPhasesPhaseParserRuleCall_0()); 
+             before(grammarAccess.getGameAccess().getPhase1PhaseParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
             rulePhase();
 
             state._fsp--;
 
-             after(grammarAccess.getGameAccess().getPhasesPhaseParserRuleCall_0()); 
+             after(grammarAccess.getGameAccess().getPhase1PhaseParserRuleCall_0_0()); 
 
             }
 
@@ -1760,21 +2271,263 @@ public class InternalPhasesParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Game__PhasesAssignment"
+    // $ANTLR end "rule__Game__Phase1Assignment_0"
+
+
+    // $ANTLR start "rule__Game__Phase2Assignment_1"
+    // InternalPhases.g:755:1: rule__Game__Phase2Assignment_1 : ( rulePhase ) ;
+    public final void rule__Game__Phase2Assignment_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalPhases.g:759:1: ( ( rulePhase ) )
+            // InternalPhases.g:760:2: ( rulePhase )
+            {
+            // InternalPhases.g:760:2: ( rulePhase )
+            // InternalPhases.g:761:3: rulePhase
+            {
+             before(grammarAccess.getGameAccess().getPhase2PhaseParserRuleCall_1_0()); 
+            pushFollow(FOLLOW_2);
+            rulePhase();
+
+            state._fsp--;
+
+             after(grammarAccess.getGameAccess().getPhase2PhaseParserRuleCall_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Game__Phase2Assignment_1"
+
+
+    // $ANTLR start "rule__Game__Phase3Assignment_2"
+    // InternalPhases.g:770:1: rule__Game__Phase3Assignment_2 : ( rulePhase ) ;
+    public final void rule__Game__Phase3Assignment_2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalPhases.g:774:1: ( ( rulePhase ) )
+            // InternalPhases.g:775:2: ( rulePhase )
+            {
+            // InternalPhases.g:775:2: ( rulePhase )
+            // InternalPhases.g:776:3: rulePhase
+            {
+             before(grammarAccess.getGameAccess().getPhase3PhaseParserRuleCall_2_0()); 
+            pushFollow(FOLLOW_2);
+            rulePhase();
+
+            state._fsp--;
+
+             after(grammarAccess.getGameAccess().getPhase3PhaseParserRuleCall_2_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Game__Phase3Assignment_2"
+
+
+    // $ANTLR start "rule__Game__Phase4Assignment_3"
+    // InternalPhases.g:785:1: rule__Game__Phase4Assignment_3 : ( rulePhase ) ;
+    public final void rule__Game__Phase4Assignment_3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalPhases.g:789:1: ( ( rulePhase ) )
+            // InternalPhases.g:790:2: ( rulePhase )
+            {
+            // InternalPhases.g:790:2: ( rulePhase )
+            // InternalPhases.g:791:3: rulePhase
+            {
+             before(grammarAccess.getGameAccess().getPhase4PhaseParserRuleCall_3_0()); 
+            pushFollow(FOLLOW_2);
+            rulePhase();
+
+            state._fsp--;
+
+             after(grammarAccess.getGameAccess().getPhase4PhaseParserRuleCall_3_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Game__Phase4Assignment_3"
+
+
+    // $ANTLR start "rule__Game__Phase5Assignment_4"
+    // InternalPhases.g:800:1: rule__Game__Phase5Assignment_4 : ( rulePhase ) ;
+    public final void rule__Game__Phase5Assignment_4() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalPhases.g:804:1: ( ( rulePhase ) )
+            // InternalPhases.g:805:2: ( rulePhase )
+            {
+            // InternalPhases.g:805:2: ( rulePhase )
+            // InternalPhases.g:806:3: rulePhase
+            {
+             before(grammarAccess.getGameAccess().getPhase5PhaseParserRuleCall_4_0()); 
+            pushFollow(FOLLOW_2);
+            rulePhase();
+
+            state._fsp--;
+
+             after(grammarAccess.getGameAccess().getPhase5PhaseParserRuleCall_4_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Game__Phase5Assignment_4"
+
+
+    // $ANTLR start "rule__Phase__PhaseNumberAssignment_1"
+    // InternalPhases.g:815:1: rule__Phase__PhaseNumberAssignment_1 : ( RULE_INT ) ;
+    public final void rule__Phase__PhaseNumberAssignment_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalPhases.g:819:1: ( ( RULE_INT ) )
+            // InternalPhases.g:820:2: ( RULE_INT )
+            {
+            // InternalPhases.g:820:2: ( RULE_INT )
+            // InternalPhases.g:821:3: RULE_INT
+            {
+             before(grammarAccess.getPhaseAccess().getPhaseNumberINTTerminalRuleCall_1_0()); 
+            match(input,RULE_INT,FOLLOW_2); 
+             after(grammarAccess.getPhaseAccess().getPhaseNumberINTTerminalRuleCall_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Phase__PhaseNumberAssignment_1"
+
+
+    // $ANTLR start "rule__Phase__PhaseTypeAssignment_2"
+    // InternalPhases.g:830:1: rule__Phase__PhaseTypeAssignment_2 : ( rulePhaseType ) ;
+    public final void rule__Phase__PhaseTypeAssignment_2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalPhases.g:834:1: ( ( rulePhaseType ) )
+            // InternalPhases.g:835:2: ( rulePhaseType )
+            {
+            // InternalPhases.g:835:2: ( rulePhaseType )
+            // InternalPhases.g:836:3: rulePhaseType
+            {
+             before(grammarAccess.getPhaseAccess().getPhaseTypePhaseTypeParserRuleCall_2_0()); 
+            pushFollow(FOLLOW_2);
+            rulePhaseType();
+
+            state._fsp--;
+
+             after(grammarAccess.getPhaseAccess().getPhaseTypePhaseTypeParserRuleCall_2_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Phase__PhaseTypeAssignment_2"
 
 
     // $ANTLR start "rule__PhaseType__StreetTypeAssignment_0"
-    // InternalPhases.g:593:1: rule__PhaseType__StreetTypeAssignment_0 : ( ruleSTREET_TYPE ) ;
+    // InternalPhases.g:845:1: rule__PhaseType__StreetTypeAssignment_0 : ( ruleSTREET_TYPE ) ;
     public final void rule__PhaseType__StreetTypeAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPhases.g:597:1: ( ( ruleSTREET_TYPE ) )
-            // InternalPhases.g:598:2: ( ruleSTREET_TYPE )
+            // InternalPhases.g:849:1: ( ( ruleSTREET_TYPE ) )
+            // InternalPhases.g:850:2: ( ruleSTREET_TYPE )
             {
-            // InternalPhases.g:598:2: ( ruleSTREET_TYPE )
-            // InternalPhases.g:599:3: ruleSTREET_TYPE
+            // InternalPhases.g:850:2: ( ruleSTREET_TYPE )
+            // InternalPhases.g:851:3: ruleSTREET_TYPE
             {
              before(grammarAccess.getPhaseTypeAccess().getStreetTypeSTREET_TYPEParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -1805,17 +2558,17 @@ public class InternalPhasesParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PhaseType__NumbersTypeAssignment_1"
-    // InternalPhases.g:608:1: rule__PhaseType__NumbersTypeAssignment_1 : ( ruleNUMBERS_TYPE ) ;
+    // InternalPhases.g:860:1: rule__PhaseType__NumbersTypeAssignment_1 : ( ruleNUMBERS_TYPE ) ;
     public final void rule__PhaseType__NumbersTypeAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPhases.g:612:1: ( ( ruleNUMBERS_TYPE ) )
-            // InternalPhases.g:613:2: ( ruleNUMBERS_TYPE )
+            // InternalPhases.g:864:1: ( ( ruleNUMBERS_TYPE ) )
+            // InternalPhases.g:865:2: ( ruleNUMBERS_TYPE )
             {
-            // InternalPhases.g:613:2: ( ruleNUMBERS_TYPE )
-            // InternalPhases.g:614:3: ruleNUMBERS_TYPE
+            // InternalPhases.g:865:2: ( ruleNUMBERS_TYPE )
+            // InternalPhases.g:866:3: ruleNUMBERS_TYPE
             {
              before(grammarAccess.getPhaseTypeAccess().getNumbersTypeNUMBERS_TYPEParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -1846,17 +2599,17 @@ public class InternalPhasesParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PhaseType__ColorTypeAssignment_2"
-    // InternalPhases.g:623:1: rule__PhaseType__ColorTypeAssignment_2 : ( ruleCOLORS_TYPE ) ;
+    // InternalPhases.g:875:1: rule__PhaseType__ColorTypeAssignment_2 : ( ruleCOLORS_TYPE ) ;
     public final void rule__PhaseType__ColorTypeAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPhases.g:627:1: ( ( ruleCOLORS_TYPE ) )
-            // InternalPhases.g:628:2: ( ruleCOLORS_TYPE )
+            // InternalPhases.g:879:1: ( ( ruleCOLORS_TYPE ) )
+            // InternalPhases.g:880:2: ( ruleCOLORS_TYPE )
             {
-            // InternalPhases.g:628:2: ( ruleCOLORS_TYPE )
-            // InternalPhases.g:629:3: ruleCOLORS_TYPE
+            // InternalPhases.g:880:2: ( ruleCOLORS_TYPE )
+            // InternalPhases.g:881:3: ruleCOLORS_TYPE
             {
              before(grammarAccess.getPhaseTypeAccess().getColorTypeCOLORS_TYPEParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -1887,21 +2640,21 @@ public class InternalPhasesParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NUMBERS_TYPE__NameAssignment_0"
-    // InternalPhases.g:638:1: rule__NUMBERS_TYPE__NameAssignment_0 : ( ( 'NUMBERS' ) ) ;
+    // InternalPhases.g:890:1: rule__NUMBERS_TYPE__NameAssignment_0 : ( ( 'NUMBERS' ) ) ;
     public final void rule__NUMBERS_TYPE__NameAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPhases.g:642:1: ( ( ( 'NUMBERS' ) ) )
-            // InternalPhases.g:643:2: ( ( 'NUMBERS' ) )
+            // InternalPhases.g:894:1: ( ( ( 'NUMBERS' ) ) )
+            // InternalPhases.g:895:2: ( ( 'NUMBERS' ) )
             {
-            // InternalPhases.g:643:2: ( ( 'NUMBERS' ) )
-            // InternalPhases.g:644:3: ( 'NUMBERS' )
+            // InternalPhases.g:895:2: ( ( 'NUMBERS' ) )
+            // InternalPhases.g:896:3: ( 'NUMBERS' )
             {
              before(grammarAccess.getNUMBERS_TYPEAccess().getNameNUMBERSKeyword_0_0()); 
-            // InternalPhases.g:645:3: ( 'NUMBERS' )
-            // InternalPhases.g:646:4: 'NUMBERS'
+            // InternalPhases.g:897:3: ( 'NUMBERS' )
+            // InternalPhases.g:898:4: 'NUMBERS'
             {
              before(grammarAccess.getNUMBERS_TYPEAccess().getNameNUMBERSKeyword_0_0()); 
             match(input,16,FOLLOW_2); 
@@ -1932,17 +2685,17 @@ public class InternalPhasesParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NUMBERS_TYPE__NumbersTypeAssignment_2"
-    // InternalPhases.g:657:1: rule__NUMBERS_TYPE__NumbersTypeAssignment_2 : ( ruleNUMBERS ) ;
+    // InternalPhases.g:909:1: rule__NUMBERS_TYPE__NumbersTypeAssignment_2 : ( ruleNUMBERS ) ;
     public final void rule__NUMBERS_TYPE__NumbersTypeAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPhases.g:661:1: ( ( ruleNUMBERS ) )
-            // InternalPhases.g:662:2: ( ruleNUMBERS )
+            // InternalPhases.g:913:1: ( ( ruleNUMBERS ) )
+            // InternalPhases.g:914:2: ( ruleNUMBERS )
             {
-            // InternalPhases.g:662:2: ( ruleNUMBERS )
-            // InternalPhases.g:663:3: ruleNUMBERS
+            // InternalPhases.g:914:2: ( ruleNUMBERS )
+            // InternalPhases.g:915:3: ruleNUMBERS
             {
              before(grammarAccess.getNUMBERS_TYPEAccess().getNumbersTypeNUMBERSParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -1973,21 +2726,21 @@ public class InternalPhasesParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__COLORS_TYPE__NameAssignment_0"
-    // InternalPhases.g:672:1: rule__COLORS_TYPE__NameAssignment_0 : ( ( 'COLORS' ) ) ;
+    // InternalPhases.g:924:1: rule__COLORS_TYPE__NameAssignment_0 : ( ( 'COLORS' ) ) ;
     public final void rule__COLORS_TYPE__NameAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPhases.g:676:1: ( ( ( 'COLORS' ) ) )
-            // InternalPhases.g:677:2: ( ( 'COLORS' ) )
+            // InternalPhases.g:928:1: ( ( ( 'COLORS' ) ) )
+            // InternalPhases.g:929:2: ( ( 'COLORS' ) )
             {
-            // InternalPhases.g:677:2: ( ( 'COLORS' ) )
-            // InternalPhases.g:678:3: ( 'COLORS' )
+            // InternalPhases.g:929:2: ( ( 'COLORS' ) )
+            // InternalPhases.g:930:3: ( 'COLORS' )
             {
              before(grammarAccess.getCOLORS_TYPEAccess().getNameCOLORSKeyword_0_0()); 
-            // InternalPhases.g:679:3: ( 'COLORS' )
-            // InternalPhases.g:680:4: 'COLORS'
+            // InternalPhases.g:931:3: ( 'COLORS' )
+            // InternalPhases.g:932:4: 'COLORS'
             {
              before(grammarAccess.getCOLORS_TYPEAccess().getNameCOLORSKeyword_0_0()); 
             match(input,17,FOLLOW_2); 
@@ -2018,17 +2771,17 @@ public class InternalPhasesParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__COLORS_TYPE__NumberColorsAssignment_2"
-    // InternalPhases.g:691:1: rule__COLORS_TYPE__NumberColorsAssignment_2 : ( RULE_INT ) ;
+    // InternalPhases.g:943:1: rule__COLORS_TYPE__NumberColorsAssignment_2 : ( RULE_INT ) ;
     public final void rule__COLORS_TYPE__NumberColorsAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPhases.g:695:1: ( ( RULE_INT ) )
-            // InternalPhases.g:696:2: ( RULE_INT )
+            // InternalPhases.g:947:1: ( ( RULE_INT ) )
+            // InternalPhases.g:948:2: ( RULE_INT )
             {
-            // InternalPhases.g:696:2: ( RULE_INT )
-            // InternalPhases.g:697:3: RULE_INT
+            // InternalPhases.g:948:2: ( RULE_INT )
+            // InternalPhases.g:949:3: RULE_INT
             {
              before(grammarAccess.getCOLORS_TYPEAccess().getNumberColorsINTTerminalRuleCall_2_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -2055,21 +2808,21 @@ public class InternalPhasesParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__STREET_TYPE__NameAssignment_0"
-    // InternalPhases.g:706:1: rule__STREET_TYPE__NameAssignment_0 : ( ( 'STREET' ) ) ;
+    // InternalPhases.g:958:1: rule__STREET_TYPE__NameAssignment_0 : ( ( 'STREET' ) ) ;
     public final void rule__STREET_TYPE__NameAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPhases.g:710:1: ( ( ( 'STREET' ) ) )
-            // InternalPhases.g:711:2: ( ( 'STREET' ) )
+            // InternalPhases.g:962:1: ( ( ( 'STREET' ) ) )
+            // InternalPhases.g:963:2: ( ( 'STREET' ) )
             {
-            // InternalPhases.g:711:2: ( ( 'STREET' ) )
-            // InternalPhases.g:712:3: ( 'STREET' )
+            // InternalPhases.g:963:2: ( ( 'STREET' ) )
+            // InternalPhases.g:964:3: ( 'STREET' )
             {
              before(grammarAccess.getSTREET_TYPEAccess().getNameSTREETKeyword_0_0()); 
-            // InternalPhases.g:713:3: ( 'STREET' )
-            // InternalPhases.g:714:4: 'STREET'
+            // InternalPhases.g:965:3: ( 'STREET' )
+            // InternalPhases.g:966:4: 'STREET'
             {
              before(grammarAccess.getSTREET_TYPEAccess().getNameSTREETKeyword_0_0()); 
             match(input,18,FOLLOW_2); 
@@ -2100,17 +2853,17 @@ public class InternalPhasesParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__STREET_TYPE__StreetLenghtAssignment_2"
-    // InternalPhases.g:725:1: rule__STREET_TYPE__StreetLenghtAssignment_2 : ( RULE_INT ) ;
+    // InternalPhases.g:977:1: rule__STREET_TYPE__StreetLenghtAssignment_2 : ( RULE_INT ) ;
     public final void rule__STREET_TYPE__StreetLenghtAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPhases.g:729:1: ( ( RULE_INT ) )
-            // InternalPhases.g:730:2: ( RULE_INT )
+            // InternalPhases.g:981:1: ( ( RULE_INT ) )
+            // InternalPhases.g:982:2: ( RULE_INT )
             {
-            // InternalPhases.g:730:2: ( RULE_INT )
-            // InternalPhases.g:731:3: RULE_INT
+            // InternalPhases.g:982:2: ( RULE_INT )
+            // InternalPhases.g:983:3: RULE_INT
             {
              before(grammarAccess.getSTREET_TYPEAccess().getStreetLenghtINTTerminalRuleCall_2_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -2142,10 +2895,11 @@ public class InternalPhasesParser extends AbstractInternalContentAssistParser {
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000004002L});
-    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000070000L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000003800L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000070000L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000003800L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000003802L});
 
 }

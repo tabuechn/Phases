@@ -9,6 +9,8 @@ import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
 import org.xtext.de.htwg.phases.Game
 import org.xtext.de.htwg.phases.Phase
+import java.lang.reflect.Array
+import java.util.LinkedList
 
 /**
  * Generates code from your model files on save.
@@ -21,13 +23,19 @@ class PhasesGenerator extends AbstractGenerator {
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 		
 		val game = resource.contents.head as Game;
-		
-		for(Phase phase : game.phases){
+		val phases = new LinkedList();
+		phases.add(game.phase1);
+		phases.add(game.phase2);
+		phases.add(game.phase3);
+		phases.add(game.phase4);
+		phases.add(game.phase5);
+		for(Phase phase : phases){
 			
 			if(phase.phaseType.numbersType!=null){
 				System.out.println(phase.phaseType.numbersType.name);
 				for(nuberTyps: phase.phaseType.numbersType.numbersType){
 					System.out.println(nuberTyps);
+					
 				}
 				fsa.generateFile('Phase'+phase.phaseNumber+'.java', 
 				"PhasenTyp: " + phase.phaseType.numbersType.name

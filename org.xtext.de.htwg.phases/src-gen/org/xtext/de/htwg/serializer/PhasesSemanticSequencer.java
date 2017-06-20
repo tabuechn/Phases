@@ -17,6 +17,7 @@ import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransi
 import org.xtext.de.htwg.phases.COLORS_TYPE;
 import org.xtext.de.htwg.phases.Game;
 import org.xtext.de.htwg.phases.NUMBERS_TYPE;
+import org.xtext.de.htwg.phases.Phase;
 import org.xtext.de.htwg.phases.PhaseType;
 import org.xtext.de.htwg.phases.PhasesPackage;
 import org.xtext.de.htwg.phases.STREET_TYPE;
@@ -44,6 +45,9 @@ public class PhasesSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				return; 
 			case PhasesPackage.NUMBERS_TYPE:
 				sequence_NUMBERS_TYPE(context, (NUMBERS_TYPE) semanticObject); 
+				return; 
+			case PhasesPackage.PHASE:
+				sequence_Phase(context, (Phase) semanticObject); 
 				return; 
 			case PhasesPackage.PHASE_TYPE:
 				sequence_PhaseType(context, (PhaseType) semanticObject); 
@@ -82,10 +86,28 @@ public class PhasesSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     Game returns Game
 	 *
 	 * Constraint:
-	 *     phases+=Phase+
+	 *     (phase1=Phase phase2=Phase phase3=Phase phase4=Phase phase5=Phase)
 	 */
 	protected void sequence_Game(ISerializationContext context, Game semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, PhasesPackage.Literals.GAME__PHASE1) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PhasesPackage.Literals.GAME__PHASE1));
+			if (transientValues.isValueTransient(semanticObject, PhasesPackage.Literals.GAME__PHASE2) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PhasesPackage.Literals.GAME__PHASE2));
+			if (transientValues.isValueTransient(semanticObject, PhasesPackage.Literals.GAME__PHASE3) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PhasesPackage.Literals.GAME__PHASE3));
+			if (transientValues.isValueTransient(semanticObject, PhasesPackage.Literals.GAME__PHASE4) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PhasesPackage.Literals.GAME__PHASE4));
+			if (transientValues.isValueTransient(semanticObject, PhasesPackage.Literals.GAME__PHASE5) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PhasesPackage.Literals.GAME__PHASE5));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getGameAccess().getPhase1PhaseParserRuleCall_0_0(), semanticObject.getPhase1());
+		feeder.accept(grammarAccess.getGameAccess().getPhase2PhaseParserRuleCall_1_0(), semanticObject.getPhase2());
+		feeder.accept(grammarAccess.getGameAccess().getPhase3PhaseParserRuleCall_2_0(), semanticObject.getPhase3());
+		feeder.accept(grammarAccess.getGameAccess().getPhase4PhaseParserRuleCall_3_0(), semanticObject.getPhase4());
+		feeder.accept(grammarAccess.getGameAccess().getPhase5PhaseParserRuleCall_4_0(), semanticObject.getPhase5());
+		feeder.finish();
 	}
 	
 	
@@ -94,7 +116,7 @@ public class PhasesSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     NUMBERS_TYPE returns NUMBERS_TYPE
 	 *
 	 * Constraint:
-	 *     (name='NUMBERS' numbersType+=NUMBERS)
+	 *     (name='NUMBERS' numbersType+=NUMBERS*)
 	 */
 	protected void sequence_NUMBERS_TYPE(ISerializationContext context, NUMBERS_TYPE semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -103,7 +125,6 @@ public class PhasesSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Contexts:
-	 *     Phase returns PhaseType
 	 *     PhaseType returns PhaseType
 	 *
 	 * Constraint:
@@ -111,6 +132,27 @@ public class PhasesSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 */
 	protected void sequence_PhaseType(ISerializationContext context, PhaseType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Phase returns Phase
+	 *
+	 * Constraint:
+	 *     (phaseNumber=INT phaseType=PhaseType)
+	 */
+	protected void sequence_Phase(ISerializationContext context, Phase semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, PhasesPackage.Literals.PHASE__PHASE_NUMBER) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PhasesPackage.Literals.PHASE__PHASE_NUMBER));
+			if (transientValues.isValueTransient(semanticObject, PhasesPackage.Literals.PHASE__PHASE_TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PhasesPackage.Literals.PHASE__PHASE_TYPE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getPhaseAccess().getPhaseNumberINTTerminalRuleCall_1_0(), semanticObject.getPhaseNumber());
+		feeder.accept(grammarAccess.getPhaseAccess().getPhaseTypePhaseTypeParserRuleCall_2_0(), semanticObject.getPhaseType());
+		feeder.finish();
 	}
 	
 	

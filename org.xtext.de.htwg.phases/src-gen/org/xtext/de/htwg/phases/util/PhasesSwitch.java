@@ -91,7 +91,6 @@ public class PhasesSwitch<T> extends Switch<T>
       {
         PhaseType phaseType = (PhaseType)theEObject;
         T result = casePhaseType(phaseType);
-        if (result == null) result = casePhase(phaseType);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }

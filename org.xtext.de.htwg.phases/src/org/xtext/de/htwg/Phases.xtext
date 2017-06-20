@@ -3,17 +3,14 @@ grammar org.xtext.de.htwg.Phases with org.eclipse.xtext.common.Terminals
 generate phases "http://www.xtext.org/de/htwg/Phases"
 
 Game:
-	phase1=Phase
-	phase2=Phase
-	phase3=Phase
-	phase4=Phase
-	phase5=Phase
+	(phases += Phase)*
 ;
 
 Phase:
 	'PHASE' 
 	phaseNumber=INT
 	phaseType=PhaseType
+	phaseDescription=STRING
 	;
 
 

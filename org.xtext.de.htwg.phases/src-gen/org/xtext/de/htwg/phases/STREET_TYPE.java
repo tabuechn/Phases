@@ -12,11 +12,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.de.htwg.phases.STREET_TYPE#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.de.htwg.phases.STREET_TYPE#getStreetLenght <em>Street Lenght</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.xtext.de.htwg.phases.PhasesPackage#getSTREET_TYPE()
  * @model

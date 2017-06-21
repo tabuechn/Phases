@@ -19,11 +19,11 @@ import org.xtext.de.htwg.phases.STREET_TYPE;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.de.htwg.phases.impl.STREET_TYPEImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.de.htwg.phases.impl.STREET_TYPEImpl#getStreetLenght <em>Street Lenght</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

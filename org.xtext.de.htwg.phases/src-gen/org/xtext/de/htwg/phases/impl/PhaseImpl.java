@@ -22,12 +22,12 @@ import org.xtext.de.htwg.phases.PhasesPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.de.htwg.phases.impl.PhaseImpl#getPhaseNumber <em>Phase Number</em>}</li>
  *   <li>{@link org.xtext.de.htwg.phases.impl.PhaseImpl#getPhaseType <em>Phase Type</em>}</li>
  *   <li>{@link org.xtext.de.htwg.phases.impl.PhaseImpl#getPhaseDescription <em>Phase Description</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

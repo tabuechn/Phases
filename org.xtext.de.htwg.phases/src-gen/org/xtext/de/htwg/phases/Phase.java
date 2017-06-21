@@ -12,12 +12,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.de.htwg.phases.Phase#getPhaseNumber <em>Phase Number</em>}</li>
  *   <li>{@link org.xtext.de.htwg.phases.Phase#getPhaseType <em>Phase Type</em>}</li>
  *   <li>{@link org.xtext.de.htwg.phases.Phase#getPhaseDescription <em>Phase Description</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.xtext.de.htwg.phases.PhasesPackage#getPhase()
  * @model

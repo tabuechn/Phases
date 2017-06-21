@@ -7,6 +7,7 @@ import com.google.common.base.Objects;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
@@ -93,31 +94,290 @@ public class PhasesGenerator extends AbstractGenerator {
         int _phaseNumber = phase.getPhaseNumber();
         String _plus = ("Phase" + Integer.valueOf(_phaseNumber));
         String _plus_1 = (_plus + ".java");
+        StringConcatenation _builder = new StringConcatenation();
+        _builder.append("package model.phase.impl;");
+        _builder.newLine();
+        _builder.append("import model.deck.IDeckOfCards;");
+        _builder.newLine();
+        _builder.append("import model.phase.DeckNotFitException;");
+        _builder.newLine();
+        _builder.append("import model.phase.IPhase;");
+        _builder.newLine();
+        _builder.append("import model.stack.ICardStack;");
+        _builder.newLine();
+        _builder.append("import java.util.List;");
+        _builder.newLine();
+        _builder.newLine();
+        _builder.append("/**");
+        _builder.newLine();
+        _builder.append(" ");
+        _builder.append("* Created by Tarek on 24.09.2015. Be grateful for this superior Code!");
+        _builder.newLine();
+        _builder.append(" ");
+        _builder.append("*");
+        _builder.newLine();
+        _builder.append(" ");
+        _builder.append("* edited: Konraifen88");
+        _builder.newLine();
+        _builder.append(" ");
+        _builder.append("* date: 30.09.2015");
+        _builder.newLine();
+        _builder.append(" ");
+        _builder.append("* merged phase checker and getter");
+        _builder.newLine();
+        _builder.append(" ");
+        _builder.append("* edited: daschwin");
+        _builder.newLine();
+        _builder.append(" ");
+        _builder.append("* date: 20.07.2017");
+        _builder.newLine();
+        _builder.append(" ");
+        _builder.append("* to be generated");
+        _builder.newLine();
+        _builder.append(" ");
+        _builder.append("*/");
+        _builder.newLine();
+        _builder.append("public class Phase");
         int _phaseNumber_1 = phase.getPhaseNumber();
-        String _string_6 = Integer.valueOf(_phaseNumber_1).toString();
-        String _plus_2 = ("\r\npackage model.phase.impl;\r\nimport model.deck.IDeckOfCards;\r\nimport model.phase.DeckNotFitException;\r\nimport model.phase.IPhase;\r\nimport model.stack.ICardStack;\r\nimport java.util.List;\r\n\r\n/**\r\n * Created by Tarek on 24.09.2015. Be grateful for this superior Code!\r\n *\r\n * edited: Konraifen88\r\n * date: 30.09.2015\r\n * merged phase checker and getter\r\n * edited: daschwin\r\n * date: 20.07.2017\r\n * to be generated\r\n */\r\npublic class Phase" + _string_6);
-        String _plus_3 = (_plus_2 + " implements IPhase {\r\n\r\n    public static final int PHASE_NUMBER = ");
+        _builder.append(_phaseNumber_1, "");
+        _builder.append(" implements IPhase {");
+        _builder.newLineIfNotEmpty();
+        _builder.newLine();
+        _builder.append("    ");
+        _builder.append("public static final int PHASE_NUMBER = ");
         int _phaseNumber_2 = phase.getPhaseNumber();
-        String _string_7 = Integer.valueOf(_phaseNumber_2).toString();
-        String _plus_4 = (_plus_3 + _string_7);
-        String _plus_5 = (_plus_4 + "\r\n\tprivate static final String DESCRIPTION_PHASE = \"");
+        _builder.append(_phaseNumber_2, "    ");
+        _builder.append(";");
+        _builder.newLineIfNotEmpty();
+        _builder.append("\t");
+        _builder.append("private static final String DESCRIPTION_PHASE = \"");
         String _phaseDescription = phase.getPhaseDescription();
-        String _string_8 = _phaseDescription.toString();
-        String _plus_6 = (_plus_5 + _string_8);
-        String _plus_7 = (_plus_6 + "\";\r\n    private Boolean isNumberPhase = false;\r\n    private String phaseType = \"");
-        String _plus_8 = (_plus_7 + this.phaseType);
-        String _plus_9 = (_plus_8 + "\";\r\n    private String[] numbersType = ");
-        String _plus_10 = (_plus_9 + this.numbersTypes);
-        String _plus_11 = (_plus_10 + ";\r\n    private Integer numberColors = ");
-        String _plus_12 = (_plus_11 + this.numberColors);
-        String _plus_13 = (_plus_12 + ";\r\n    private Integer streetLenght = ");
-        String _plus_14 = (_plus_13 + this.streetLenght);
-        String _plus_15 = (_plus_14 + ";\r\n    public Phase");
+        _builder.append(_phaseDescription, "\t");
+        _builder.append("\";");
+        _builder.newLineIfNotEmpty();
+        {
+          boolean _equals = Objects.equal(this.phaseType, "NUMBERS");
+          if (_equals) {
+            _builder.append("    ");
+            _builder.append("private static final String DOUBLE = \"DOUBLE\";");
+            _builder.newLine();
+            _builder.append("    ");
+            _builder.append("private static final String TRIPLE = \"TRIPLE\";");
+            _builder.newLine();
+            _builder.append("    ");
+            _builder.append("private static final String QUADRUPLE = \"QUADRUPLE\";");
+            _builder.newLine();
+            _builder.append("    ");
+            _builder.append("private String[] numbersTypes=");
+            _builder.append(this.numbersTypes, "    ");
+            _builder.append(";");
+            _builder.newLineIfNotEmpty();
+          }
+        }
+        {
+          boolean _equals_1 = Objects.equal(this.phaseType, "COLORS");
+          if (_equals_1) {
+            _builder.append("    ");
+            _builder.append("private Integer numberColors = ");
+            _builder.append(this.numberColors, "    ");
+            _builder.append(";");
+            _builder.newLineIfNotEmpty();
+          }
+        }
+        {
+          boolean _equals_2 = Objects.equal(this.phaseType, "STREET");
+          if (_equals_2) {
+            _builder.append("    ");
+            _builder.append("private Integer streetLenght = ");
+            _builder.append(this.streetLenght, "    ");
+            _builder.append(";");
+            _builder.newLineIfNotEmpty();
+          }
+        }
+        _builder.append("    ");
+        _builder.append("private IPhaseChecker phaseChecker;");
+        _builder.newLine();
+        _builder.append("    ");
+        _builder.newLine();
+        _builder.append("    ");
+        _builder.append("public Phase");
         int _phaseNumber_3 = phase.getPhaseNumber();
-        String _string_9 = Integer.valueOf(_phaseNumber_3).toString();
-        String _plus_16 = (_plus_15 + _string_9);
-        String _plus_17 = (_plus_16 + "() {\r\n        //empty\r\n    }\r\n\r\n    @Override\r\n    public String getDescription() {\r\n        return DESCRIPTION_PHASE;\r\n    }\r\n\r\n    @Override\r\n    public List<ICardStack> splitAndCheckPhase(IDeckOfCards phase) throws DeckNotFitException {\r\n\r\n        if(phaseType.equals(\"NUMBERS\")) {\r\n            isNumberPhase = true;\r\n            PhaseNumber phaseNumber = new PhaseNumber();\r\n            return phaseNumber.splitAndCheckPhase(phase, numbersType);\r\n        }\r\n        if(phaseType.equals(\"COLORS\")) {\r\n            PhaseColor phaseNumber = new PhaseColor();\r\n            return phaseNumber.splitAndCheckPhase(phase, numberColors);\r\n        }\r\n        if(phaseType.equals(\"STREET\")) {\r\n            PhaseStreet phaseNumber = new PhaseStreet();\r\n            return phaseNumber.splitAndCheckPhase(phase, streetLenght);\r\n        }\r\n        throw new DeckNotFitException();\r\n    }\r\n\r\n    @Override\r\n    public IPhase getNextPhase() {\r\n        return new Phase5();\r\n    }\r\n\r\n    @Override\r\n    public int getPhaseNumber() {\r\n        return PHASE_NUMBER;\r\n    }\r\n\r\n    @Override\r\n    public boolean isNumberPhase() {\r\n        return isNumberPhase;\r\n    }\r\n\r\n    @Override\r\n    public String toString() {\r\n        return \"Phase\"+PHASE_NUMBER;\r\n    }\r\n}");
-        fsa.generateFile(_plus_1, _plus_17);
+        _builder.append(_phaseNumber_3, "    ");
+        _builder.append("() {");
+        _builder.newLineIfNotEmpty();
+        {
+          boolean _equals_3 = Objects.equal(this.phaseType, "STREET");
+          if (_equals_3) {
+            _builder.append("    ");
+            _builder.append("phaseChecker = new StreetChecker(streetLenght);");
+            _builder.newLine();
+          }
+        }
+        {
+          boolean _equals_4 = Objects.equal(this.phaseType, "COLORS");
+          if (_equals_4) {
+            _builder.append("    ");
+            _builder.append("phaseChecker = new ColorChecker(numberColors);");
+            _builder.newLine();
+          }
+        }
+        _builder.append("    ");
+        _builder.append("}");
+        _builder.newLine();
+        _builder.newLine();
+        _builder.append("    ");
+        _builder.append("@Override");
+        _builder.newLine();
+        _builder.append("    ");
+        _builder.append("public String getDescription() {");
+        _builder.newLine();
+        _builder.append("        ");
+        _builder.append("return DESCRIPTION_PHASE;");
+        _builder.newLine();
+        _builder.append("    ");
+        _builder.append("}");
+        _builder.newLine();
+        _builder.newLine();
+        _builder.append("    ");
+        _builder.append("@Override");
+        _builder.newLine();
+        _builder.append("    ");
+        _builder.append("public List<ICardStack> splitAndCheckPhase(IDeckOfCards phase) throws DeckNotFitException {");
+        _builder.newLine();
+        {
+          boolean _equals_5 = Objects.equal(this.phaseType, "NUMBERS");
+          if (_equals_5) {
+            _builder.append("\t\t\t");
+            _builder.append("TODO");
+            _builder.newLine();
+          }
+        }
+        {
+          boolean _equals_6 = Objects.equal(this.phaseType, "COLORS");
+          if (_equals_6) {
+            _builder.append("\t\t\t");
+            _builder.append("if (phaseChecker.check(phase)) {");
+            _builder.newLine();
+            _builder.append("\t\t\t");
+            _builder.append("    ");
+            _builder.append("return Collections.singletonList(new ColorStack(phase));");
+            _builder.newLine();
+            _builder.append("\t\t\t");
+            _builder.append("}");
+            _builder.newLine();
+            _builder.append("\t\t\t");
+            _builder.append("throw new DeckNotFitException();");
+            _builder.newLine();
+          }
+        }
+        {
+          boolean _equals_7 = Objects.equal(this.phaseType, "STREET");
+          if (_equals_7) {
+            _builder.append("\t\t\t");
+            _builder.append("if (phaseChecker.check(phase)) {");
+            _builder.newLine();
+            _builder.append("\t\t\t");
+            _builder.append("\t");
+            _builder.append("return Collections.singletonList(new StreetStack(phase));");
+            _builder.newLine();
+            _builder.append("\t\t\t");
+            _builder.append("}");
+            _builder.newLine();
+            _builder.append("\t\t\t");
+            _builder.append("throw new DeckNotFitException();");
+            _builder.newLine();
+          }
+        }
+        _builder.append("    ");
+        _builder.append("}");
+        _builder.newLine();
+        _builder.newLine();
+        _builder.append("    ");
+        _builder.append("@Override");
+        _builder.newLine();
+        _builder.append("    ");
+        _builder.append("public IPhase getNextPhase() {");
+        _builder.newLine();
+        {
+          int _phaseNumber_4 = phase.getPhaseNumber();
+          boolean _lessThan = (_phaseNumber_4 < 5);
+          if (_lessThan) {
+            _builder.append("    \t");
+            _builder.append("return new Phase");
+            int _phaseNumber_5 = phase.getPhaseNumber();
+            int _plus_2 = (_phaseNumber_5 + 1);
+            _builder.append(_plus_2, "    \t");
+            _builder.append("();");
+            _builder.newLineIfNotEmpty();
+          }
+        }
+        {
+          int _phaseNumber_6 = phase.getPhaseNumber();
+          boolean _greaterEqualsThan = (_phaseNumber_6 >= 5);
+          if (_greaterEqualsThan) {
+            _builder.append("    \t");
+            _builder.append("return new Phase5();");
+            _builder.newLine();
+          }
+        }
+        _builder.append("    ");
+        _builder.append("}");
+        _builder.newLine();
+        _builder.newLine();
+        _builder.append("    ");
+        _builder.append("@Override");
+        _builder.newLine();
+        _builder.append("    ");
+        _builder.append("public int getPhaseNumber() {");
+        _builder.newLine();
+        _builder.append("    \t");
+        _builder.append("return PHASE_NUMBER;");
+        _builder.newLine();
+        _builder.append("    ");
+        _builder.append("}");
+        _builder.newLine();
+        _builder.newLine();
+        _builder.append("    ");
+        _builder.append("@Override");
+        _builder.newLine();
+        _builder.append("    ");
+        _builder.append("public boolean isNumberPhase() {");
+        _builder.newLine();
+        {
+          boolean _equals_8 = Objects.equal(this.phaseType, "NUMBERS");
+          if (_equals_8) {
+            _builder.append("    \t");
+            _builder.append("return true;");
+            _builder.newLine();
+          }
+        }
+        {
+          boolean _notEquals_3 = (!Objects.equal(this.phaseType, "NUMBERS"));
+          if (_notEquals_3) {
+            _builder.append("    \t");
+            _builder.append("return false;");
+            _builder.newLine();
+          }
+        }
+        _builder.append("    ");
+        _builder.append("}");
+        _builder.newLine();
+        _builder.newLine();
+        _builder.append("    ");
+        _builder.append("@Override");
+        _builder.newLine();
+        _builder.append("    ");
+        _builder.append("public String toString() {");
+        _builder.newLine();
+        _builder.append("        ");
+        _builder.append("return \"Phase\" + PHASE_NUMBER;");
+        _builder.newLine();
+        _builder.append("    ");
+        _builder.append("}");
+        _builder.newLine();
+        _builder.append("}");
+        _builder.newLine();
+        fsa.generateFile(_plus_1, _builder);
       }
     }
   }

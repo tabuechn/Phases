@@ -19,11 +19,11 @@ import org.xtext.de.htwg.phases.PhasesPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.de.htwg.phases.impl.COLORS_TYPEImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.de.htwg.phases.impl.COLORS_TYPEImpl#getNumberColors <em>Number Colors</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

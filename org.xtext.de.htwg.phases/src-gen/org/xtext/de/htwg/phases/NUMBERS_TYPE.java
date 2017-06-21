@@ -14,11 +14,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.de.htwg.phases.NUMBERS_TYPE#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.de.htwg.phases.NUMBERS_TYPE#getNumbersType <em>Numbers Type</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.xtext.de.htwg.phases.PhasesPackage#getNUMBERS_TYPE()
  * @model

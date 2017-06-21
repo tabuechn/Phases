@@ -25,11 +25,11 @@ import org.xtext.de.htwg.phases.PhasesPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.de.htwg.phases.impl.NUMBERS_TYPEImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.de.htwg.phases.impl.NUMBERS_TYPEImpl#getNumbersType <em>Numbers Type</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -14,10 +14,10 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.de.htwg.phases.Game#getPhases <em>Phases</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.xtext.de.htwg.phases.PhasesPackage#getGame()
  * @model

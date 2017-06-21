@@ -46,7 +46,7 @@ class PhasesGenerator extends AbstractGenerator {
 		    }
 		    
 			fsa.generateFile('Phase'+phase.phaseNumber+'.java', 
-			"
+			'''
 package model.phase.impl;
 import model.deck.IDeckOfCards;
 import model.phase.DeckNotFitException;
@@ -64,17 +64,31 @@ import java.util.List;
  * date: 20.07.2017
  * to be generated
  */
-public class Phase"+phase.phaseNumber.toString+" implements IPhase {
+public class Phase«phase.phaseNumber» implements IPhase {
 
-    public static final int PHASE_NUMBER = "+phase.phaseNumber.toString+"
-	private static final String DESCRIPTION_PHASE = \""+phase.phaseDescription.toString+"\";
-    private Boolean isNumberPhase = false;
-    private String phaseType = \""+phaseType+"\";
-    private String[] numbersType = "+numbersTypes+";
-    private Integer numberColors = "+numberColors+";
-    private Integer streetLenght = "+streetLenght+";
-    public Phase"+phase.phaseNumber.toString+"() {
-        //empty
+    public static final int PHASE_NUMBER = «phase.phaseNumber»;
+	private static final String DESCRIPTION_PHASE = "«phase.phaseDescription»";
+    «IF	phaseType	==	"NUMBERS"»
+    private static final String DOUBLE = "DOUBLE";
+    private static final String TRIPLE = "TRIPLE";
+    private static final String QUADRUPLE = "QUADRUPLE";
+    private String[] numbersTypes=«numbersTypes»;
+    «ENDIF»	
+    «IF	phaseType	==	"COLORS"»
+    private Integer numberColors = «numberColors»;
+    «ENDIF»
+    «IF	phaseType	==	"STREET"»
+    private Integer streetLenght = «streetLenght»;
+    «ENDIF»
+    private IPhaseChecker phaseChecker;
+    
+    public Phase«phase.phaseNumber»() {
+    «IF	phaseType	==	"STREET"»
+    phaseChecker = new StreetChecker(streetLenght);
+    «ENDIF»
+    «IF	phaseType	==	"COLORS"»
+        phaseChecker = new ColorChecker(numberColors);
+    «ENDIF»
     }
 
     @Override
@@ -84,43 +98,54 @@ public class Phase"+phase.phaseNumber.toString+" implements IPhase {
 
     @Override
     public List<ICardStack> splitAndCheckPhase(IDeckOfCards phase) throws DeckNotFitException {
-
-        if(phaseType.equals(\"NUMBERS\")) {
-            isNumberPhase = true;
-            PhaseNumber phaseNumber = new PhaseNumber();
-            return phaseNumber.splitAndCheckPhase(phase, numbersType);
-        }
-        if(phaseType.equals(\"COLORS\")) {
-            PhaseColor phaseNumber = new PhaseColor();
-            return phaseNumber.splitAndCheckPhase(phase, numberColors);
-        }
-        if(phaseType.equals(\"STREET\")) {
-            PhaseStreet phaseNumber = new PhaseStreet();
-            return phaseNumber.splitAndCheckPhase(phase, streetLenght);
-        }
-        throw new DeckNotFitException();
+			«IF	phaseType	==	"NUMBERS"»
+				TODO
+			«ENDIF»	
+			«IF	phaseType	==	"COLORS"»
+				if (phaseChecker.check(phase)) {
+				    return Collections.singletonList(new ColorStack(phase));
+				}
+				throw new DeckNotFitException();
+			«ENDIF»	
+			«IF	phaseType	==	"STREET"»
+				if (phaseChecker.check(phase)) {
+					return Collections.singletonList(new StreetStack(phase));
+				}
+				throw new DeckNotFitException();
+			«ENDIF»	
     }
 
     @Override
     public IPhase getNextPhase() {
-        return new Phase5();
+    	«IF	phase.phaseNumber < 5»
+    	return new Phase«phase.phaseNumber + 1»();
+    	«ENDIF»
+    	«IF	phase.phaseNumber >= 5»
+    	return new Phase5();
+    	«ENDIF»	
     }
 
     @Override
     public int getPhaseNumber() {
-        return PHASE_NUMBER;
+    	return PHASE_NUMBER;
     }
 
     @Override
     public boolean isNumberPhase() {
-        return isNumberPhase;
+    	«IF	phaseType	==	"NUMBERS"»
+    	return true;
+    	«ENDIF»
+    	«IF	phaseType	!=	"NUMBERS"»
+    	return false;
+    	«ENDIF»
     }
 
     @Override
     public String toString() {
-        return \"Phase\"+PHASE_NUMBER;
+        return "Phase" + PHASE_NUMBER;
     }
-}" )
+}
+''')
 			
 		}
 	}

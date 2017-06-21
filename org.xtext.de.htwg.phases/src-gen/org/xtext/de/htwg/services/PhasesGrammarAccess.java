@@ -49,10 +49,7 @@ public class PhasesGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cPhaseDescriptionSTRINGTerminalRuleCall_3_0 = (RuleCall)cPhaseDescriptionAssignment_3.eContents().get(0);
 		
 		//Phase:
-		//	'PHASE'
-		//	phaseNumber=INT
-		//	phaseType=PhaseType
-		//	phaseDescription=STRING;
+		//	'PHASE' phaseNumber=INT phaseType=PhaseType phaseDescription=STRING;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'PHASE' phaseNumber=INT phaseType=PhaseType phaseDescription=STRING
@@ -296,10 +293,7 @@ public class PhasesGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Phase:
-	//	'PHASE'
-	//	phaseNumber=INT
-	//	phaseType=PhaseType
-	//	phaseDescription=STRING;
+	//	'PHASE' phaseNumber=INT phaseType=PhaseType phaseDescription=STRING;
 	public PhaseElements getPhaseAccess() {
 		return pPhase;
 	}

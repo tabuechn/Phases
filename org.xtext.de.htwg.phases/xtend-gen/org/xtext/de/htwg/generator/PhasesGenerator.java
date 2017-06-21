@@ -76,6 +76,19 @@ public class PhasesGenerator extends AbstractGenerator {
           EList<String> _numbersType_7 = _numbersType_6.getNumbersType();
           String _get_1 = _numbersType_7.get(1);
           this.secNumType = _get_1;
+          boolean _equals = Objects.equal(this.firstNumType, "TRIPLE");
+          if (_equals) {
+            boolean _equals_1 = Objects.equal(this.secNumType, "QUADRUPLE");
+            if (_equals_1) {
+              this.firstNumType = "QUADRUPLE";
+              this.secNumType = "TRIPLE";
+            }
+          }
+          boolean _equals_2 = Objects.equal(this.firstNumType, "DOUBLE");
+          if (_equals_2) {
+            this.firstNumType = this.secNumType;
+            this.secNumType = "DOUBLE";
+          }
           if ((Objects.equal(this.firstNumType, "QUADRUPLE") || Objects.equal(this.secNumType, "QUADRUPLE"))) {
             this.biggestNumType = 4;
           } else {
@@ -122,13 +135,38 @@ public class PhasesGenerator extends AbstractGenerator {
         StringConcatenation _builder = new StringConcatenation();
         _builder.append("package model.phase.impl;");
         _builder.newLine();
+        _builder.append("import model.card.impl.CardValueComparator;");
+        _builder.newLine();
         _builder.append("import model.deck.IDeckOfCards;");
         _builder.newLine();
         _builder.append("import model.phase.DeckNotFitException;");
         _builder.newLine();
         _builder.append("import model.phase.IPhase;");
         _builder.newLine();
+        _builder.append("import model.phase.IPhaseChecker;");
+        _builder.newLine();
+        _builder.append("import model.phase.IPhaseSplitter;");
+        _builder.newLine();
+        _builder.append("import model.phase.checker.ValueChecker;");
+        _builder.newLine();
+        _builder.append("import model.phase.checker.ColorChecker;");
+        _builder.newLine();
+        _builder.append("import model.phase.checker.StreetChecker;");
+        _builder.newLine();
+        _builder.append("import model.phase.splitter.DeckSplitter;");
+        _builder.newLine();
         _builder.append("import model.stack.ICardStack;");
+        _builder.newLine();
+        _builder.append("import model.stack.impl.PairStack;");
+        _builder.newLine();
+        _builder.append("import model.stack.impl.ColorStack;");
+        _builder.newLine();
+        _builder.append("import model.stack.impl.StreetStack;");
+        _builder.newLine();
+        _builder.newLine();
+        _builder.append("import java.util.Arrays;");
+        _builder.newLine();
+        _builder.append("import java.util.Collections;");
         _builder.newLine();
         _builder.append("import java.util.List;");
         _builder.newLine();
@@ -181,56 +219,52 @@ public class PhasesGenerator extends AbstractGenerator {
         _builder.append("\";");
         _builder.newLineIfNotEmpty();
         {
-          boolean _equals = Objects.equal(this.phaseType, "NUMBERS");
-          if (_equals) {
+          boolean _equals_3 = Objects.equal(this.phaseType, "NUMBERS");
+          if (_equals_3) {
             _builder.append("private static final String DOUBLE = \"DOUBLE\";");
             _builder.newLine();
             _builder.append("private static final String TRIPLE = \"TRIPLE\";");
             _builder.newLine();
             _builder.append("private static final String QUADRUPLE = \"QUADRUPLE\";");
             _builder.newLine();
-            _builder.append("private String[] numbersTypes=");
-            _builder.append(this.numbersTypes, "");
-            _builder.append(";");
-            _builder.newLineIfNotEmpty();
             {
-              boolean _equals_1 = Objects.equal(this.firstNumType, "DOUBLE");
-              if (_equals_1) {
+              boolean _equals_4 = Objects.equal(this.firstNumType, "DOUBLE");
+              if (_equals_4) {
                 _builder.append("private IPhaseChecker firstChecker = new ValueChecker(2); ");
                 _builder.newLine();
               }
             }
             {
-              boolean _equals_2 = Objects.equal(this.firstNumType, "TRIPLE");
-              if (_equals_2) {
+              boolean _equals_5 = Objects.equal(this.firstNumType, "TRIPLE");
+              if (_equals_5) {
                 _builder.append("private IPhaseChecker firstChecker = new ValueChecker(3);");
                 _builder.newLine();
               }
             }
             {
-              boolean _equals_3 = Objects.equal(this.firstNumType, "QUADRUPLE");
-              if (_equals_3) {
+              boolean _equals_6 = Objects.equal(this.firstNumType, "QUADRUPLE");
+              if (_equals_6) {
                 _builder.append("private IPhaseChecker firstChecker = new ValueChecker(4);");
                 _builder.newLine();
               }
             }
             {
-              boolean _equals_4 = Objects.equal(this.secNumType, "DOUBLE");
-              if (_equals_4) {
+              boolean _equals_7 = Objects.equal(this.secNumType, "DOUBLE");
+              if (_equals_7) {
                 _builder.append("private IPhaseChecker secondChecker = new ValueChecker(2); ");
                 _builder.newLine();
               }
             }
             {
-              boolean _equals_5 = Objects.equal(this.secNumType, "TRIPLE");
-              if (_equals_5) {
+              boolean _equals_8 = Objects.equal(this.secNumType, "TRIPLE");
+              if (_equals_8) {
                 _builder.append("private IPhaseChecker secondChecker = new ValueChecker(3);");
                 _builder.newLine();
               }
             }
             {
-              boolean _equals_6 = Objects.equal(this.secNumType, "QUADRUPLE");
-              if (_equals_6) {
+              boolean _equals_9 = Objects.equal(this.secNumType, "QUADRUPLE");
+              if (_equals_9) {
                 _builder.append("private IPhaseChecker secondChecker = new ValueChecker(4);");
                 _builder.newLine();
               }
@@ -242,8 +276,8 @@ public class PhasesGenerator extends AbstractGenerator {
           }
         }
         {
-          boolean _equals_7 = Objects.equal(this.phaseType, "COLORS");
-          if (_equals_7) {
+          boolean _equals_10 = Objects.equal(this.phaseType, "COLORS");
+          if (_equals_10) {
             _builder.append("    ");
             _builder.append("private Integer numberColors = ");
             _builder.append(this.numberColors, "    ");
@@ -255,8 +289,8 @@ public class PhasesGenerator extends AbstractGenerator {
           }
         }
         {
-          boolean _equals_8 = Objects.equal(this.phaseType, "STREET");
-          if (_equals_8) {
+          boolean _equals_11 = Objects.equal(this.phaseType, "STREET");
+          if (_equals_11) {
             _builder.append("    ");
             _builder.append("private Integer streetLenght = ");
             _builder.append(this.streetLenght, "    ");
@@ -278,16 +312,16 @@ public class PhasesGenerator extends AbstractGenerator {
         _builder.append("() {");
         _builder.newLineIfNotEmpty();
         {
-          boolean _equals_9 = Objects.equal(this.phaseType, "STREET");
-          if (_equals_9) {
+          boolean _equals_12 = Objects.equal(this.phaseType, "STREET");
+          if (_equals_12) {
             _builder.append("    ");
             _builder.append("phaseChecker = new StreetChecker(streetLenght);");
             _builder.newLine();
           }
         }
         {
-          boolean _equals_10 = Objects.equal(this.phaseType, "COLORS");
-          if (_equals_10) {
+          boolean _equals_13 = Objects.equal(this.phaseType, "COLORS");
+          if (_equals_13) {
             _builder.append("    ");
             _builder.append("phaseChecker = new ColorChecker(numberColors);");
             _builder.newLine();
@@ -317,8 +351,8 @@ public class PhasesGenerator extends AbstractGenerator {
         _builder.append("public List<ICardStack> splitAndCheckPhase(IDeckOfCards phase) throws DeckNotFitException {");
         _builder.newLine();
         {
-          boolean _equals_11 = Objects.equal(this.phaseType, "NUMBERS");
-          if (_equals_11) {
+          boolean _equals_14 = Objects.equal(this.phaseType, "NUMBERS");
+          if (_equals_14) {
             _builder.append("List<IDeckOfCards> splitted = phaseSplitter.split(phase);");
             _builder.newLine();
             _builder.append("if (firstChecker.check(splitted.get(0)) && secondChecker.check(splitted.get(1)) ) {");
@@ -333,8 +367,8 @@ public class PhasesGenerator extends AbstractGenerator {
           }
         }
         {
-          boolean _equals_12 = Objects.equal(this.phaseType, "COLORS");
-          if (_equals_12) {
+          boolean _equals_15 = Objects.equal(this.phaseType, "COLORS");
+          if (_equals_15) {
             _builder.append("\t\t\t");
             _builder.append("if (phaseChecker.check(phase)) {");
             _builder.newLine();
@@ -351,8 +385,8 @@ public class PhasesGenerator extends AbstractGenerator {
           }
         }
         {
-          boolean _equals_13 = Objects.equal(this.phaseType, "STREET");
-          if (_equals_13) {
+          boolean _equals_16 = Objects.equal(this.phaseType, "STREET");
+          if (_equals_16) {
             _builder.append("\t\t\t");
             _builder.append("if (phaseChecker.check(phase)) {");
             _builder.newLine();
@@ -424,8 +458,8 @@ public class PhasesGenerator extends AbstractGenerator {
         _builder.append("public boolean isNumberPhase() {");
         _builder.newLine();
         {
-          boolean _equals_14 = Objects.equal(this.phaseType, "NUMBERS");
-          if (_equals_14) {
+          boolean _equals_17 = Objects.equal(this.phaseType, "NUMBERS");
+          if (_equals_17) {
             _builder.append("    \t");
             _builder.append("return true;");
             _builder.newLine();

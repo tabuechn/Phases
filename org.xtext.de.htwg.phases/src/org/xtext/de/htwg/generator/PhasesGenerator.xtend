@@ -36,9 +36,23 @@ class PhasesGenerator extends AbstractGenerator {
 			
 			if(phase.phaseType.numbersType != null){
 		    	phaseType = phase.phaseType.numbersType.name.toString;
+		    	
 		    	numbersTypes = phase.phaseType.numbersType.numbersType.toString;
+		    	
 		    	firstNumType = phase.phaseType.numbersType.numbersType.get(0);
 		    	secNumType = phase.phaseType.numbersType.numbersType.get(1);
+		    	
+		    	if(firstNumType == "TRIPLE"){
+		    		if(secNumType == "QUADRUPLE") {
+		    			firstNumType = "QUADRUPLE";
+		    			secNumType = "TRIPLE";
+		    		}
+		    	}
+		    	if(firstNumType == "DOUBLE"){
+		    		firstNumType = secNumType;
+		    		secNumType = "DOUBLE";
+		    	}
+		    	
 		    	if(firstNumType == "QUADRUPLE" || secNumType == "QUADRUPLE") {
 		    		biggestNumType = 4;
 		    	} else if(firstNumType == "TRIPLE" || secNumType == "TRIPLE") {
@@ -60,10 +74,23 @@ class PhasesGenerator extends AbstractGenerator {
 			fsa.generateFile('Phase'+phase.phaseNumber+'.java', 
 			'''
 package model.phase.impl;
+import model.card.impl.CardValueComparator;
 import model.deck.IDeckOfCards;
 import model.phase.DeckNotFitException;
 import model.phase.IPhase;
+import model.phase.IPhaseChecker;
+import model.phase.IPhaseSplitter;
+import model.phase.checker.ValueChecker;
+import model.phase.checker.ColorChecker;
+import model.phase.checker.StreetChecker;
+import model.phase.splitter.DeckSplitter;
 import model.stack.ICardStack;
+import model.stack.impl.PairStack;
+import model.stack.impl.ColorStack;
+import model.stack.impl.StreetStack;
+
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -84,7 +111,6 @@ public class Phase«phase.phaseNumber» implements IPhase {
 	private static final String DOUBLE = "DOUBLE";
 	private static final String TRIPLE = "TRIPLE";
 	private static final String QUADRUPLE = "QUADRUPLE";
-	private String[] numbersTypes=«numbersTypes»;
     	«IF firstNumType == "DOUBLE"»
 	private IPhaseChecker firstChecker = new ValueChecker(2); 
     	«ENDIF»

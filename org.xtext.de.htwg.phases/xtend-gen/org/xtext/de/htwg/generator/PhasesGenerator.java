@@ -95,22 +95,29 @@ public class PhasesGenerator extends AbstractGenerator {
         String _plus_1 = (_plus + ".java");
         int _phaseNumber_1 = phase.getPhaseNumber();
         String _string_6 = Integer.valueOf(_phaseNumber_1).toString();
-        String _plus_2 = ("\r\n\t\t\t\tpackage model.phase.impl;\r\n\t\t\t\timport model.deck.IDeckOfCards;\r\n\t\t\t\timport model.phase.DeckNotFitException;\r\n\t\t\t\timport model.phase.IPhase;\r\n\t\t\t\timport model.stack.ICardStack;\r\n\t\t\t\timport java.util.List;\r\n\t\t\t\t\r\n\t\t\t\t/**\r\n\t\t\t\t * Created by Tarek on 24.09.2015. Be grateful for this superior Code!\r\n\t\t\t\t *\r\n\t\t\t\t * edited: Konraifen88\r\n\t\t\t\t * date: 30.09.2015\r\n\t\t\t\t * merged phase checker and getter\r\n\t\t\t\t * edited: daschwin\r\n\t\t\t\t * date: 200.07.2017\r\n\t\t\t\t * to be generated\r\n\t\t\t\t */\r\n\t\t\t\tpublic class Phases implements IPhase {\r\n\t\t\t\t\r\n\t\t\t\t    public static final int PHASE_NUMBER = " + _string_6);
-        String _plus_3 = (_plus_2 + "\r\n\t\t\t\t\tprivate static final String DESCRIPTION_PHASE = \"");
-        String _phaseDescription = phase.getPhaseDescription();
-        String _string_7 = _phaseDescription.toString();
+        String _plus_2 = ("\r\npackage model.phase.impl;\r\nimport model.deck.IDeckOfCards;\r\nimport model.phase.DeckNotFitException;\r\nimport model.phase.IPhase;\r\nimport model.stack.ICardStack;\r\nimport java.util.List;\r\n\r\n/**\r\n * Created by Tarek on 24.09.2015. Be grateful for this superior Code!\r\n *\r\n * edited: Konraifen88\r\n * date: 30.09.2015\r\n * merged phase checker and getter\r\n * edited: daschwin\r\n * date: 20.07.2017\r\n * to be generated\r\n */\r\npublic class Phase" + _string_6);
+        String _plus_3 = (_plus_2 + " implements IPhase {\r\n\r\n    public static final int PHASE_NUMBER = ");
+        int _phaseNumber_2 = phase.getPhaseNumber();
+        String _string_7 = Integer.valueOf(_phaseNumber_2).toString();
         String _plus_4 = (_plus_3 + _string_7);
-        String _plus_5 = (_plus_4 + "\";\r\n\t\t\t\t    private Boolean isNumberPhase = false;\r\n\t\t\t\t    private String phaseType = \"");
-        String _plus_6 = (_plus_5 + this.phaseType);
-        String _plus_7 = (_plus_6 + "\";\r\n\t\t\t\t    private String[] numbersType = ");
-        String _plus_8 = (_plus_7 + this.numbersTypes);
-        String _plus_9 = (_plus_8 + ";\r\n\t\t\t\t    private Integer numberColors = ");
-        String _plus_10 = (_plus_9 + this.numberColors);
-        String _plus_11 = (_plus_10 + ";\r\n\t\t\t\t    private Integer streetLenght = ");
-        String _plus_12 = (_plus_11 + this.streetLenght);
-        String _plus_13 = (_plus_12 + ";\r\n\t\t\t\t    public Phases() {\r\n\t\t\t\t        //empty\r\n\t\t\t\t    }\r\n\t\t\t\t\r\n\t\t\t\t    @Override\r\n\t\t\t\t    public String getDescription() {\r\n\t\t\t\t        return DESCRIPTION_PHASE;\r\n\t\t\t\t    }\r\n\t\t\t\t\r\n\t\t\t\t    @Override\r\n\t\t\t\t    public List<ICardStack> splitAndCheckPhase(IDeckOfCards phase) throws DeckNotFitException {\r\n\t\t\t\t\r\n\t\t\t\t        if(phaseType.equals(\"NUMBERS\")) {\r\n\t\t\t\t            isNumberPhase = true;\r\n\t\t\t\t            PhaseNumber phaseNumber = new PhaseNumber();\r\n\t\t\t\t            return phaseNumber.splitAndCheckPhase(phase, numbersType);\r\n\t\t\t\t        }\r\n\t\t\t\t        if(phaseType.equals(\"COLORS\")) {\r\n\t\t\t\t            PhaseColor phaseNumber = new PhaseColor();\r\n\t\t\t\t            return phaseNumber.splitAndCheckPhase(phase, numberColors);\r\n\t\t\t\t        }\r\n\t\t\t\t        if(phaseType.equals(\"STREET\")) {\r\n\t\t\t\t            PhaseStreet phaseNumber = new PhaseStreet();\r\n\t\t\t\t            return phaseNumber.splitAndCheckPhase(phase, streetLenght);\r\n\t\t\t\t        }\r\n\t\t\t\t        throw new DeckNotFitException();\r\n\t\t\t\t    }\r\n\t\t\t\t\r\n\t\t\t\t    @Override\r\n\t\t\t\t    public IPhase getNextPhase() {\r\n\t\t\t\t        return new Phase5();\r\n\t\t\t\t    }\r\n\t\t\t\t\r\n\t\t\t\t    @Override\r\n\t\t\t\t    public int getPhaseNumber() {\r\n\t\t\t\t        return PHASE_NUMBER;\r\n\t\t\t\t    }\r\n\t\t\t\t\r\n\t\t\t\t    @Override\r\n\t\t\t\t    public boolean isNumberPhase() {\r\n\t\t\t\t        return isNumberPhase;\r\n\t\t\t\t    }\r\n\t\t\t\t\r\n\t\t\t\t    @Override\r\n\t\t\t\t    public String toString() {\r\n\t\t\t\t        return \"Phase\"+PHASE_NUMBER;\r\n\t\t\t\t    }\r\n\t\t\t\t}");
-        String _plus_14 = (_plus_13 + "");
-        fsa.generateFile(_plus_1, _plus_14);
+        String _plus_5 = (_plus_4 + "\r\n\tprivate static final String DESCRIPTION_PHASE = \"");
+        String _phaseDescription = phase.getPhaseDescription();
+        String _string_8 = _phaseDescription.toString();
+        String _plus_6 = (_plus_5 + _string_8);
+        String _plus_7 = (_plus_6 + "\";\r\n    private Boolean isNumberPhase = false;\r\n    private String phaseType = \"");
+        String _plus_8 = (_plus_7 + this.phaseType);
+        String _plus_9 = (_plus_8 + "\";\r\n    private String[] numbersType = ");
+        String _plus_10 = (_plus_9 + this.numbersTypes);
+        String _plus_11 = (_plus_10 + ";\r\n    private Integer numberColors = ");
+        String _plus_12 = (_plus_11 + this.numberColors);
+        String _plus_13 = (_plus_12 + ";\r\n    private Integer streetLenght = ");
+        String _plus_14 = (_plus_13 + this.streetLenght);
+        String _plus_15 = (_plus_14 + ";\r\n    public Phase");
+        int _phaseNumber_3 = phase.getPhaseNumber();
+        String _string_9 = Integer.valueOf(_phaseNumber_3).toString();
+        String _plus_16 = (_plus_15 + _string_9);
+        String _plus_17 = (_plus_16 + "() {\r\n        //empty\r\n    }\r\n\r\n    @Override\r\n    public String getDescription() {\r\n        return DESCRIPTION_PHASE;\r\n    }\r\n\r\n    @Override\r\n    public List<ICardStack> splitAndCheckPhase(IDeckOfCards phase) throws DeckNotFitException {\r\n\r\n        if(phaseType.equals(\"NUMBERS\")) {\r\n            isNumberPhase = true;\r\n            PhaseNumber phaseNumber = new PhaseNumber();\r\n            return phaseNumber.splitAndCheckPhase(phase, numbersType);\r\n        }\r\n        if(phaseType.equals(\"COLORS\")) {\r\n            PhaseColor phaseNumber = new PhaseColor();\r\n            return phaseNumber.splitAndCheckPhase(phase, numberColors);\r\n        }\r\n        if(phaseType.equals(\"STREET\")) {\r\n            PhaseStreet phaseNumber = new PhaseStreet();\r\n            return phaseNumber.splitAndCheckPhase(phase, streetLenght);\r\n        }\r\n        throw new DeckNotFitException();\r\n    }\r\n\r\n    @Override\r\n    public IPhase getNextPhase() {\r\n        return new Phase5();\r\n    }\r\n\r\n    @Override\r\n    public int getPhaseNumber() {\r\n        return PHASE_NUMBER;\r\n    }\r\n\r\n    @Override\r\n    public boolean isNumberPhase() {\r\n        return isNumberPhase;\r\n    }\r\n\r\n    @Override\r\n    public String toString() {\r\n        return \"Phase\"+PHASE_NUMBER;\r\n    }\r\n}");
+        fsa.generateFile(_plus_1, _plus_17);
       }
     }
   }

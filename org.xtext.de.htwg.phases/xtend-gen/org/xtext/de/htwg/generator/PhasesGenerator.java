@@ -34,6 +34,12 @@ public class PhasesGenerator extends AbstractGenerator {
   
   private String streetLenght = "null";
   
+  private String firstNumType;
+  
+  private String secNumType;
+  
+  private int biggestNumType;
+  
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
     EList<EObject> _contents = resource.getContents();
@@ -60,33 +66,52 @@ public class PhasesGenerator extends AbstractGenerator {
           EList<String> _numbersType_3 = _numbersType_2.getNumbersType();
           String _string_1 = _numbersType_3.toString();
           this.numbersTypes = _string_1;
+          PhaseType _phaseType_3 = phase.getPhaseType();
+          NUMBERS_TYPE _numbersType_4 = _phaseType_3.getNumbersType();
+          EList<String> _numbersType_5 = _numbersType_4.getNumbersType();
+          String _get = _numbersType_5.get(0);
+          this.firstNumType = _get;
+          PhaseType _phaseType_4 = phase.getPhaseType();
+          NUMBERS_TYPE _numbersType_6 = _phaseType_4.getNumbersType();
+          EList<String> _numbersType_7 = _numbersType_6.getNumbersType();
+          String _get_1 = _numbersType_7.get(1);
+          this.secNumType = _get_1;
+          if ((Objects.equal(this.firstNumType, "QUADRUPLE") || Objects.equal(this.secNumType, "QUADRUPLE"))) {
+            this.biggestNumType = 4;
+          } else {
+            if ((Objects.equal(this.firstNumType, "TRIPLE") || Objects.equal(this.secNumType, "TRIPLE"))) {
+              this.biggestNumType = 3;
+            } else {
+              this.biggestNumType = 2;
+            }
+          }
         }
-        PhaseType _phaseType_3 = phase.getPhaseType();
-        COLORS_TYPE _colorType = _phaseType_3.getColorType();
+        PhaseType _phaseType_5 = phase.getPhaseType();
+        COLORS_TYPE _colorType = _phaseType_5.getColorType();
         boolean _notEquals_1 = (!Objects.equal(_colorType, null));
         if (_notEquals_1) {
-          PhaseType _phaseType_4 = phase.getPhaseType();
-          COLORS_TYPE _colorType_1 = _phaseType_4.getColorType();
+          PhaseType _phaseType_6 = phase.getPhaseType();
+          COLORS_TYPE _colorType_1 = _phaseType_6.getColorType();
           String _name_1 = _colorType_1.getName();
           String _string_2 = _name_1.toString();
           this.phaseType = _string_2;
-          PhaseType _phaseType_5 = phase.getPhaseType();
-          COLORS_TYPE _colorType_2 = _phaseType_5.getColorType();
+          PhaseType _phaseType_7 = phase.getPhaseType();
+          COLORS_TYPE _colorType_2 = _phaseType_7.getColorType();
           int _numberColors = _colorType_2.getNumberColors();
           String _string_3 = Integer.valueOf(_numberColors).toString();
           this.numberColors = _string_3;
         }
-        PhaseType _phaseType_6 = phase.getPhaseType();
-        STREET_TYPE _streetType = _phaseType_6.getStreetType();
+        PhaseType _phaseType_8 = phase.getPhaseType();
+        STREET_TYPE _streetType = _phaseType_8.getStreetType();
         boolean _notEquals_2 = (!Objects.equal(_streetType, null));
         if (_notEquals_2) {
-          PhaseType _phaseType_7 = phase.getPhaseType();
-          STREET_TYPE _streetType_1 = _phaseType_7.getStreetType();
+          PhaseType _phaseType_9 = phase.getPhaseType();
+          STREET_TYPE _streetType_1 = _phaseType_9.getStreetType();
           String _name_2 = _streetType_1.getName();
           String _string_4 = _name_2.toString();
           this.phaseType = _string_4;
-          PhaseType _phaseType_8 = phase.getPhaseType();
-          STREET_TYPE _streetType_2 = _phaseType_8.getStreetType();
+          PhaseType _phaseType_10 = phase.getPhaseType();
+          STREET_TYPE _streetType_2 = _phaseType_10.getStreetType();
           int _streetLenght = _streetType_2.getStreetLenght();
           String _string_5 = Integer.valueOf(_streetLenght).toString();
           this.streetLenght = _string_5;
@@ -158,44 +183,91 @@ public class PhasesGenerator extends AbstractGenerator {
         {
           boolean _equals = Objects.equal(this.phaseType, "NUMBERS");
           if (_equals) {
-            _builder.append("    ");
             _builder.append("private static final String DOUBLE = \"DOUBLE\";");
             _builder.newLine();
-            _builder.append("    ");
             _builder.append("private static final String TRIPLE = \"TRIPLE\";");
             _builder.newLine();
-            _builder.append("    ");
             _builder.append("private static final String QUADRUPLE = \"QUADRUPLE\";");
             _builder.newLine();
-            _builder.append("    ");
             _builder.append("private String[] numbersTypes=");
-            _builder.append(this.numbersTypes, "    ");
+            _builder.append(this.numbersTypes, "");
             _builder.append(";");
+            _builder.newLineIfNotEmpty();
+            {
+              boolean _equals_1 = Objects.equal(this.firstNumType, "DOUBLE");
+              if (_equals_1) {
+                _builder.append("private IPhaseChecker firstChecker = new ValueChecker(2); ");
+                _builder.newLine();
+              }
+            }
+            {
+              boolean _equals_2 = Objects.equal(this.firstNumType, "TRIPLE");
+              if (_equals_2) {
+                _builder.append("private IPhaseChecker firstChecker = new ValueChecker(3);");
+                _builder.newLine();
+              }
+            }
+            {
+              boolean _equals_3 = Objects.equal(this.firstNumType, "QUADRUPLE");
+              if (_equals_3) {
+                _builder.append("private IPhaseChecker firstChecker = new ValueChecker(4);");
+                _builder.newLine();
+              }
+            }
+            {
+              boolean _equals_4 = Objects.equal(this.secNumType, "DOUBLE");
+              if (_equals_4) {
+                _builder.append("private IPhaseChecker secondChecker = new ValueChecker(2); ");
+                _builder.newLine();
+              }
+            }
+            {
+              boolean _equals_5 = Objects.equal(this.secNumType, "TRIPLE");
+              if (_equals_5) {
+                _builder.append("private IPhaseChecker secondChecker = new ValueChecker(3);");
+                _builder.newLine();
+              }
+            }
+            {
+              boolean _equals_6 = Objects.equal(this.secNumType, "QUADRUPLE");
+              if (_equals_6) {
+                _builder.append("private IPhaseChecker secondChecker = new ValueChecker(4);");
+                _builder.newLine();
+              }
+            }
+            _builder.append("private IPhaseSplitter phaseSplitter = new DeckSplitter(");
+            _builder.append(this.biggestNumType, "");
+            _builder.append(", new CardValueComparator());");
             _builder.newLineIfNotEmpty();
           }
         }
         {
-          boolean _equals_1 = Objects.equal(this.phaseType, "COLORS");
-          if (_equals_1) {
+          boolean _equals_7 = Objects.equal(this.phaseType, "COLORS");
+          if (_equals_7) {
             _builder.append("    ");
             _builder.append("private Integer numberColors = ");
             _builder.append(this.numberColors, "    ");
             _builder.append(";");
             _builder.newLineIfNotEmpty();
+            _builder.append("    ");
+            _builder.append("private IPhaseChecker phaseChecker;");
+            _builder.newLine();
           }
         }
         {
-          boolean _equals_2 = Objects.equal(this.phaseType, "STREET");
-          if (_equals_2) {
+          boolean _equals_8 = Objects.equal(this.phaseType, "STREET");
+          if (_equals_8) {
             _builder.append("    ");
             _builder.append("private Integer streetLenght = ");
             _builder.append(this.streetLenght, "    ");
             _builder.append(";");
             _builder.newLineIfNotEmpty();
+            _builder.append("    ");
+            _builder.append("private IPhaseChecker phaseChecker;");
+            _builder.newLine();
           }
         }
         _builder.append("    ");
-        _builder.append("private IPhaseChecker phaseChecker;");
         _builder.newLine();
         _builder.append("    ");
         _builder.newLine();
@@ -206,16 +278,16 @@ public class PhasesGenerator extends AbstractGenerator {
         _builder.append("() {");
         _builder.newLineIfNotEmpty();
         {
-          boolean _equals_3 = Objects.equal(this.phaseType, "STREET");
-          if (_equals_3) {
+          boolean _equals_9 = Objects.equal(this.phaseType, "STREET");
+          if (_equals_9) {
             _builder.append("    ");
             _builder.append("phaseChecker = new StreetChecker(streetLenght);");
             _builder.newLine();
           }
         }
         {
-          boolean _equals_4 = Objects.equal(this.phaseType, "COLORS");
-          if (_equals_4) {
+          boolean _equals_10 = Objects.equal(this.phaseType, "COLORS");
+          if (_equals_10) {
             _builder.append("    ");
             _builder.append("phaseChecker = new ColorChecker(numberColors);");
             _builder.newLine();
@@ -245,16 +317,24 @@ public class PhasesGenerator extends AbstractGenerator {
         _builder.append("public List<ICardStack> splitAndCheckPhase(IDeckOfCards phase) throws DeckNotFitException {");
         _builder.newLine();
         {
-          boolean _equals_5 = Objects.equal(this.phaseType, "NUMBERS");
-          if (_equals_5) {
-            _builder.append("\t\t\t");
-            _builder.append("TODO");
+          boolean _equals_11 = Objects.equal(this.phaseType, "NUMBERS");
+          if (_equals_11) {
+            _builder.append("List<IDeckOfCards> splitted = phaseSplitter.split(phase);");
+            _builder.newLine();
+            _builder.append("if (firstChecker.check(splitted.get(0)) && secondChecker.check(splitted.get(1)) ) {");
+            _builder.newLine();
+            _builder.append("    \t");
+            _builder.append("return Arrays.asList(new PairStack(splitted.get(0)), new PairStack(splitted.get(1)));");
+            _builder.newLine();
+            _builder.append("}");
+            _builder.newLine();
+            _builder.append("throw new DeckNotFitException();");
             _builder.newLine();
           }
         }
         {
-          boolean _equals_6 = Objects.equal(this.phaseType, "COLORS");
-          if (_equals_6) {
+          boolean _equals_12 = Objects.equal(this.phaseType, "COLORS");
+          if (_equals_12) {
             _builder.append("\t\t\t");
             _builder.append("if (phaseChecker.check(phase)) {");
             _builder.newLine();
@@ -271,8 +351,8 @@ public class PhasesGenerator extends AbstractGenerator {
           }
         }
         {
-          boolean _equals_7 = Objects.equal(this.phaseType, "STREET");
-          if (_equals_7) {
+          boolean _equals_13 = Objects.equal(this.phaseType, "STREET");
+          if (_equals_13) {
             _builder.append("\t\t\t");
             _builder.append("if (phaseChecker.check(phase)) {");
             _builder.newLine();
@@ -344,8 +424,8 @@ public class PhasesGenerator extends AbstractGenerator {
         _builder.append("public boolean isNumberPhase() {");
         _builder.newLine();
         {
-          boolean _equals_8 = Objects.equal(this.phaseType, "NUMBERS");
-          if (_equals_8) {
+          boolean _equals_14 = Objects.equal(this.phaseType, "NUMBERS");
+          if (_equals_14) {
             _builder.append("    \t");
             _builder.append("return true;");
             _builder.newLine();

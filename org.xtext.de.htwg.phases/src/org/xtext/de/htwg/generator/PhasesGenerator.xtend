@@ -21,6 +21,9 @@ class PhasesGenerator extends AbstractGenerator {
 	String numbersTypes = "null"
 	String numberColors = "null"
 	String streetLenght = "null"
+	String firstNumType;
+	String secNumType;
+	int biggestNumType;
 	
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 		val game = resource.contents.head as Game
@@ -34,6 +37,15 @@ class PhasesGenerator extends AbstractGenerator {
 			if(phase.phaseType.numbersType != null){
 		    	phaseType = phase.phaseType.numbersType.name.toString;
 		    	numbersTypes = phase.phaseType.numbersType.numbersType.toString;
+		    	firstNumType = phase.phaseType.numbersType.numbersType.get(0);
+		    	secNumType = phase.phaseType.numbersType.numbersType.get(1);
+		    	if(firstNumType == "QUADRUPLE" || secNumType == "QUADRUPLE") {
+		    		biggestNumType = 4;
+		    	} else if(firstNumType == "TRIPLE" || secNumType == "TRIPLE") {
+		    		biggestNumType = 3;
+		    	} else {
+		    		biggestNumType = 2;
+		    	}
 		    }
 		    if(phase.phaseType.colorType != null){
 		    	phaseType = phase.phaseType.colorType.name.toString;
@@ -69,18 +81,39 @@ public class Phase«phase.phaseNumber» implements IPhase {
     public static final int PHASE_NUMBER = «phase.phaseNumber»;
 	private static final String DESCRIPTION_PHASE = "«phase.phaseDescription»";
     «IF	phaseType	==	"NUMBERS"»
-    private static final String DOUBLE = "DOUBLE";
-    private static final String TRIPLE = "TRIPLE";
-    private static final String QUADRUPLE = "QUADRUPLE";
-    private String[] numbersTypes=«numbersTypes»;
+	private static final String DOUBLE = "DOUBLE";
+	private static final String TRIPLE = "TRIPLE";
+	private static final String QUADRUPLE = "QUADRUPLE";
+	private String[] numbersTypes=«numbersTypes»;
+    	«IF firstNumType == "DOUBLE"»
+	private IPhaseChecker firstChecker = new ValueChecker(2); 
+    	«ENDIF»
+    	«IF firstNumType == "TRIPLE"»
+	private IPhaseChecker firstChecker = new ValueChecker(3);
+		«ENDIF»
+		«IF firstNumType == "QUADRUPLE"»
+	private IPhaseChecker firstChecker = new ValueChecker(4);
+		«ENDIF»
+		«IF secNumType == "DOUBLE"»
+	private IPhaseChecker secondChecker = new ValueChecker(2); 
+    	«ENDIF»
+    	«IF secNumType == "TRIPLE"»
+	private IPhaseChecker secondChecker = new ValueChecker(3);
+		«ENDIF»
+		«IF secNumType == "QUADRUPLE"»
+	private IPhaseChecker secondChecker = new ValueChecker(4);
+		«ENDIF»
+	private IPhaseSplitter phaseSplitter = new DeckSplitter(«biggestNumType», new CardValueComparator());
     «ENDIF»	
     «IF	phaseType	==	"COLORS"»
     private Integer numberColors = «numberColors»;
+    private IPhaseChecker phaseChecker;
     «ENDIF»
     «IF	phaseType	==	"STREET"»
     private Integer streetLenght = «streetLenght»;
-    «ENDIF»
     private IPhaseChecker phaseChecker;
+    «ENDIF»
+    
     
     public Phase«phase.phaseNumber»() {
     «IF	phaseType	==	"STREET"»
@@ -99,7 +132,11 @@ public class Phase«phase.phaseNumber» implements IPhase {
     @Override
     public List<ICardStack> splitAndCheckPhase(IDeckOfCards phase) throws DeckNotFitException {
 			«IF	phaseType	==	"NUMBERS"»
-				TODO
+	List<IDeckOfCards> splitted = phaseSplitter.split(phase);
+	if (firstChecker.check(splitted.get(0)) && secondChecker.check(splitted.get(1)) ) {
+    	return Arrays.asList(new PairStack(splitted.get(0)), new PairStack(splitted.get(1)));
+	}
+	throw new DeckNotFitException();
 			«ENDIF»	
 			«IF	phaseType	==	"COLORS"»
 				if (phaseChecker.check(phase)) {
